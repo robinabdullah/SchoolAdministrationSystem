@@ -23,8 +23,8 @@
         <Label x:Name="label1_Copy3" Content="Ad. Session" HorizontalAlignment="Left" Margin="231,253,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial" FontWeight="Bold"/>
         <TextBox x:Name="group" HorizontalAlignment="Left" Height="39" Margin="401,302,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="308" FontSize="20" FontStyle="Italic" FontFamily="Arial" BorderThickness="3" IsEnabled="False"/>
         <Label x:Name="label1_Copy4" Content="Group&#xA;" HorizontalAlignment="Left" Margin="231,302,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial" FontWeight="Bold"/>
-        <Button Content="DONE" HorizontalAlignment="Left" Margin="727,549,0,0" VerticalAlignment="Top" Width="391" Height="68" FontSize="26" Click="Button_Click_1" />
-        <Button Content="Cancel" HorizontalAlignment="Left" Margin="272,549,0,0" VerticalAlignment="Top" Width="391" Height="68" FontSize="26" Click="Button_Click" />
+        <Button Content="DONE" HorizontalAlignment="Left" Margin="715,549,0,0" VerticalAlignment="Top" Width="391" Height="68" FontSize="26" Click="Button_Click_1" />
+        <Button Content="Cancel" HorizontalAlignment="Left" Margin="260,549,0,0" VerticalAlignment="Top" Width="391" Height="68" FontSize="26" Click="Button_Click" />
         <Button x:Name="button" Content="SEARCH" HorizontalAlignment="Left" Margin="568,114,0,0" VerticalAlignment="Top" Width="75" Height="39" FontSize="13.333" IsDefault="True" Click="button_Click_2"/>
 
     </Grid>
