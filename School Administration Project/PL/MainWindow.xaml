@@ -1,0 +1,42 @@
+﻿<Controls:MetroWindow
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        xmlns:Dialogs="clr-namespace:MahApps.Metro.Controls.Dialogs;assembly=MahApps.Metro" 
+        x:Class="School_Administration_Project.PL.MainWindow"
+        WindowStartupLocation="Manual" 
+        Left="0" Top="0"
+        Title="MainWindow" Height="700" Width="1167" MaxHeight="700" MaxWidth="1167" MinHeight="700" MinWidth="1167">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="130*"/>
+            <ColumnDefinition Width="401*"/>
+        </Grid.ColumnDefinitions>
+        <Dialogs:CustomDialog Content="User:" Margin="150,129,520.8,271.8" VerticalAlignment="Stretch" FontSize="72" Grid.ColumnSpan="2"/>
+        <Dialogs:CustomDialog Content="Password:" Margin="-43,0,561.8,102.8" VerticalAlignment="Bottom" FontSize="72" Grid.ColumnSpan="2" RenderTransformOrigin="0,0" HorizontalAlignment="Right" Width="642" Height="297">
+            <Dialogs:CustomDialog.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Dialogs:CustomDialog.RenderTransform>
+        </Dialogs:CustomDialog>
+        <TextBox x:Name="UserName" Grid.Column="1" Margin="193,175,126.8,0" TextWrapping="Wrap" FontSize="66" Height="93" VerticalAlignment="Top" TextChanged="TextBox_TextChanged_1" Text="1"/>
+        <PasswordBox x:Name="UserPass" Grid.Column="1" HorizontalAlignment="Right" Margin="0,316,126.8,0" VerticalAlignment="Top" Width="557" Height="93" FontSize="66" IsTabStop="True" Password="1"/>
+        <Button Content="GO" Grid.Column="1" Margin="523,0,0,151.8" Click="Button_Click_1" FontSize="26" FontWeight="Bold" Height="85" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="227" IsDefault="True"/>
+        <Dialogs:CustomDialog Content="LOGIN" VerticalAlignment="Top" FontSize="90" Margin="2,2,602.8,0" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" RenderTransformOrigin="0.5,0.5" Width="556" FontFamily="Segoe UI Black" Height="149" FontWeight="Bold" Grid.ColumnSpan="2">
+            <Dialogs:CustomDialog.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Dialogs:CustomDialog.RenderTransform>
+        </Dialogs:CustomDialog>
+        
+        
+    </Grid>
+</Controls:MetroWindow>
