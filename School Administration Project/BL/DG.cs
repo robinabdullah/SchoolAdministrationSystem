@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace School_Administration_Project.BL
 {
-    class EligibleStudentList
+    class EligibleStudentListDG
     {
         private string id;
         private string mobile;
