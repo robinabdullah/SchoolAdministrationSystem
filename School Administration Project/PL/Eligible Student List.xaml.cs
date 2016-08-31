@@ -36,9 +36,9 @@ namespace School_Administration_Project.PL
             {
                 list.Add(aStd);
             }
-
+            
             dataGrid.ItemsSource = list;
-
+            
             
             
         }
