@@ -116,6 +116,9 @@
     <Compile Include="PL\Edit Profile.xaml.cs">
       <DependentUpon>Edit Profile.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PL\Eligible Student List.xaml.cs">
+      <DependentUpon>Eligible Student List.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PL\Employee_Benefits.xaml.cs">
       <DependentUpon>Employee_Benefits.xaml</DependentUpon>
     </Compile>
@@ -173,6 +176,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PL\Edit Profile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PL\Eligible Student List.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -326,7 +333,9 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

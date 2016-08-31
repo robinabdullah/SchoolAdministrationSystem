@@ -17,11 +17,12 @@
                 </TransformGroup>
             </Dialogs:CustomDialog.RenderTransform>
         </Dialogs:CustomDialog>
-        <Button Content="Student Admission" HorizontalAlignment="Left" Margin="244,236,0,0" VerticalAlignment="Top" Width="320" Height="93" FontSize="20" Click="Button_Student_Admission"/>
-        <Button Content="Written Exam Management" HorizontalAlignment="Left" Margin="623,363,0,0" VerticalAlignment="Top" Width="320" Height="93" FontSize="20" Click="Button_Written_Exam_Management"/>
-        <Button Content="Viva Exam Management" HorizontalAlignment="Left" Margin="244,363,0,0" VerticalAlignment="Top" Width="320" Height="93" FontSize="20" Click="Button_Viva_Exam_Management"/>
-        <Button Content="Admission Eligibility" HorizontalAlignment="Left" Margin="623,236,0,0" VerticalAlignment="Top" Width="320" Height="93" FontSize="20" Click="Button_Result_Management"/>
+        <Button Content="Student Admission" HorizontalAlignment="Left" Margin="79,231,0,0" VerticalAlignment="Top" Width="297" Height="93" FontSize="20" Click="Button_Student_Admission"/>
+        <Button Content="Written Exam Management" HorizontalAlignment="Left" Margin="431,358,0,0" VerticalAlignment="Top" Width="297" Height="93" FontSize="20" Click="Button_Written_Exam_Management"/>
+        <Button Content="Viva Exam Management" HorizontalAlignment="Left" Margin="79,358,0,0" VerticalAlignment="Top" Width="297" Height="93" FontSize="20" Click="Button_Viva_Exam_Management"/>
+        <Button Content="Admission Eligibility" HorizontalAlignment="Left" Margin="431,231,0,0" VerticalAlignment="Top" Width="297" Height="93" FontSize="20" Click="Button_Result_Management"/>
         <Button Content="BACK" HorizontalAlignment="Left" Margin="387,543,0,0" VerticalAlignment="Top" Width="391" Height="71" FontSize="26" Click="Button_Back"/>
+        <Button Content="Eligible Student List" HorizontalAlignment="Left" Margin="772,231,0,0" VerticalAlignment="Top" Width="297" Height="93" FontSize="20" Click="Eligible_Student_List"/>
 
     </Grid>
 </Controls:MetroWindow>

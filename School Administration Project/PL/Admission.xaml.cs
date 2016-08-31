@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MahApps.Metro.Controls;
+using School_Administration_Project.DAL;
+using School_Administration_Project.BL;
 
 namespace School_Administration_Project.PL
 {
@@ -69,6 +71,14 @@ namespace School_Administration_Project.PL
         private void Button_Form_Creation(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Eligible_Student_List(object sender, RoutedEventArgs e)
+        {
+            Eligible_Student_List a = new Eligible_Student_List();
+
+            a.Show();
+            this.Close();
         }
     }
 }
