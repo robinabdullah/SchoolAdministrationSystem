@@ -10,6 +10,7 @@
         Title="Eligible Student List" Height="700" Width="1167" MaxHeight="700" MaxWidth="1167" MinHeight="700" MinWidth="1167">
     <Grid>
         <Label x:Name="label" Content="Eligible Student List" HorizontalAlignment="Left" Margin="28,10,0,0" VerticalAlignment="Top" Height="99" Width="677" FontSize="64" FontWeight="Bold"/>
-        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="79,141,0,0" VerticalAlignment="Top" Height="439" Width="1015"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="10,109,0,0" VerticalAlignment="Top" Height="452" Width="1141"/>
+        <Button Content="Back" HorizontalAlignment="Left" Margin="398,581,0,0" VerticalAlignment="Top" Width="391" Height="71" FontSize="26" Click="Button_Back"/>
     </Grid>
 </Controls:MetroWindow>

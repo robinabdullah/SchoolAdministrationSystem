@@ -42,5 +42,12 @@ namespace School_Administration_Project.PL
             
             
         }
+
+        private void Button_Back(object sender, RoutedEventArgs e)
+        {
+            Admission ad = new Admission();
+            ad.Show();
+            this.Close();
+        }
     }
 }
