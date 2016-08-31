@@ -10,17 +10,6 @@
         Title="Eligible Student List" Height="700" Width="1167" MaxHeight="700" MaxWidth="1167" MinHeight="700" MinWidth="1167">
     <Grid>
         <Label x:Name="label" Content="Eligible Student List" HorizontalAlignment="Left" Margin="28,10,0,0" VerticalAlignment="Top" Height="99" Width="677" FontSize="64" FontWeight="Bold"/>
-        <DataGrid Name = "dataGrid" AlternatingRowBackground = "LightBlue"  
-         AlternationCount = "2" AutoGenerateColumns = "False">
-
-            <DataGrid.Columns>
-                <DataGridTextColumn Header = "Name" Binding = "{Binding Name}" />
-                <DataGridTextColumn Header = "Title" Binding = "{Binding Title}" />
-                <DataGridCheckBoxColumn Header = "ReElected?" Binding = "{Binding WasReElected}"/>
-                <DataGridComboBoxColumn Header = "Party" SelectedItemBinding = "{Binding Affiliation}" 
-                />
-            </DataGrid.Columns>
-
-        </DataGrid>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Margin="79,141,0,0" VerticalAlignment="Top" Height="439" Width="1015"/>
     </Grid>
 </Controls:MetroWindow>
