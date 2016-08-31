@@ -27,16 +27,22 @@ namespace School_Administration_Project.PL
 
             DataClassesLinqDataContext db = new DataClassesLinqDataContext(DataAccessClassLinq.connectionStringLinq);
 
-            List<DAL.Admission_Student> list = new List<DAL.Admission_Student>();
+            List<EligibleStudentListDG> list = new List<EligibleStudentListDG>();
 
             var a = from e in db.Admission_Students
                     select e;
 
+            EligibleStudentListDG el = new EligibleStudentListDG();
+
             foreach(DAL.Admission_Student aStd in a)
             {
-                list.Add(aStd);
-            }
+                el.Id = aStd.Admission_Student_ID;
+                el.Name = aStd.Full_Name;
+                el.Gender = aStd.Gender;
 
+                list.Add(el);
+            }
+            
             dataGrid.ItemsSource = list;
 
             
