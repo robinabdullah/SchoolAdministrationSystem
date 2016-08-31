@@ -31,14 +31,23 @@ namespace School_Administration_Project.PL
 
             var a = from e in db.Admission_Students
                     select e;
+            
 
             EligibleStudentListDG el = new EligibleStudentListDG();
 
             foreach(DAL.Admission_Student aStd in a)
             {
+                var b = from e in db.Admission_Exam_Results
+                        where e.Admission_Student_ID == aStd.Admission_Student_ID
+                        select e;
+
+                foreach
                 el.Id = aStd.Admission_Student_ID;
                 el.Name = aStd.Full_Name;
                 el.Gender = aStd.Gender;
+                el.Group = aStd.Group;
+                el.Mobile = aStd.Mobile;
+                el.Viva = aStd.viva
 
                 list.Add(el);
             }

@@ -89,6 +89,7 @@
     </ApplicationDefinition>
     <Compile Include="BL\BClasses.cs" />
     <Compile Include="BL\BusinessRules.cs" />
+    <Compile Include="BL\DG.cs" />
     <Compile Include="BL\Login.cs" />
     <Compile Include="DAL\DataAccessClassLinq.cs" />
     <Compile Include="DAL\DataClassesLinq.cs">
