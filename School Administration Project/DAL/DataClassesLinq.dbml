@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="StudentDB" Class="DataClassesLinqDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-5BN9EJ4\SQLEXPRESS;Initial Catalog=StudentDB;Integrated Security=True" SettingsObjectName="School_Administration_Project.Properties.Settings" SettingsPropertyName="StudentDBConnectionString" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=AL-JABZ\SQLEXPRESS;Initial Catalog=StudentDB;Integrated Security=True" SettingsObjectName="School_Administration_Project.Properties.Settings" SettingsPropertyName="StudentDBConnectionString2" Provider="System.Data.SqlClient" />
   <Table Name="dbo.Admin" Member="Admins">
     <Type Name="Admin">
       <Column Name="Admin_ID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
@@ -98,13 +98,12 @@
       <Association Name="Teacher_Admission_Exam_Result1" Member="Admission_Exam_Results1" ThisKey="Teacher_ID" OtherKey="Written_Examiner_ID" Type="Admission_Exam_Result" />
     </Type>
   </Table>
-  <Table Name="dbo.Inventory" Member="Inventories">
-    <Type Name="Inventory">
-      <Column Name="Inventory_ID" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Inventory_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Count" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Last_Added_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="Last_Added_Count" Type="System.Int32" DbType="Int" CanBeNull="true" />
+  <Table Name="dbo.Student" Member="Students">
+    <Type Name="Student">
+      <Column Name="Student_ID" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Admissin_Student_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Student_Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Admission_Student_Student" Member="Admission_Student" ThisKey="Admissin_Student_ID" OtherKey="Admission_Student_ID" Type="Admission_Student" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.Tracker" Member="Trackers">
@@ -113,12 +112,27 @@
       <Column Name="Tracking_Number" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Student" Member="Students">
-    <Type Name="Student">
-      <Column Name="Student_ID" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Admissin_Student_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Student_Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Association Name="Admission_Student_Student" Member="Admission_Student" ThisKey="Admissin_Student_ID" OtherKey="Admission_Student_ID" Type="Admission_Student" IsForeignKey="true" />
+  <Table Name="dbo.Inventory" Member="Inventories">
+    <Type Name="Inventory">
+      <Column Name="Inventory_ID" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Printer" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Computer" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Mouse" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Keyboard" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Projector" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Camera" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Whiteboard" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Marker" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Pencil" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Clock" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Paperbundle" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Pen" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Duster" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Geometrybox" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Ruler" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Chair" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Bench" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="[Table]" Member="Table" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

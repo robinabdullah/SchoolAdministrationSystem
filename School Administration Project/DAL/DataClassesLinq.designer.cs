@@ -36,19 +36,22 @@ namespace School_Administration_Project.DAL
     partial void InsertAdmission_Student(Admission_Student instance);
     partial void UpdateAdmission_Student(Admission_Student instance);
     partial void DeleteAdmission_Student(Admission_Student instance);
-    partial void InsertStudent(Student instance);
-    partial void UpdateStudent(Student instance);
-    partial void DeleteStudent(Student instance);
     partial void InsertTeacher(Teacher instance);
     partial void UpdateTeacher(Teacher instance);
     partial void DeleteTeacher(Teacher instance);
+    partial void InsertStudent(Student instance);
+    partial void UpdateStudent(Student instance);
+    partial void DeleteStudent(Student instance);
+    partial void InsertTracker(Tracker instance);
+    partial void UpdateTracker(Tracker instance);
+    partial void DeleteTracker(Tracker instance);
     partial void InsertInventory(Inventory instance);
     partial void UpdateInventory(Inventory instance);
     partial void DeleteInventory(Inventory instance);
     #endregion
 		
 		public DataClassesLinqDataContext() : 
-				base(global::School_Administration_Project.Properties.Settings.Default.StudentDBConnectionString, mappingSource)
+				base(global::School_Administration_Project.Properties.Settings.Default.StudentDBConnectionString2, mappingSource)
 		{
 			OnCreated();
 		}
@@ -101,6 +104,14 @@ namespace School_Administration_Project.DAL
 			}
 		}
 		
+		public System.Data.Linq.Table<Teacher> Teachers
+		{
+			get
+			{
+				return this.GetTable<Teacher>();
+			}
+		}
+		
 		public System.Data.Linq.Table<Student> Students
 		{
 			get
@@ -109,11 +120,11 @@ namespace School_Administration_Project.DAL
 			}
 		}
 		
-		public System.Data.Linq.Table<Teacher> Teachers
+		public System.Data.Linq.Table<Tracker> Trackers
 		{
 			get
 			{
-				return this.GetTable<Teacher>();
+				return this.GetTable<Tracker>();
 			}
 		}
 		
@@ -1446,205 +1457,6 @@ namespace School_Administration_Project.DAL
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Student")]
-	public partial class Student : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private string _Student_ID;
-		
-		private string _Admissin_Student_ID;
-		
-		private string _Subject_ID;
-		
-		private string _Result_ID;
-		
-		private string _Student_Status;
-		
-		private EntityRef<Admission_Student> _Admission_Student;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnStudent_IDChanging(string value);
-    partial void OnStudent_IDChanged();
-    partial void OnAdmissin_Student_IDChanging(string value);
-    partial void OnAdmissin_Student_IDChanged();
-    partial void OnSubject_IDChanging(string value);
-    partial void OnSubject_IDChanged();
-    partial void OnResult_IDChanging(string value);
-    partial void OnResult_IDChanged();
-    partial void OnStudent_StatusChanging(string value);
-    partial void OnStudent_StatusChanged();
-    #endregion
-		
-		public Student()
-		{
-			this._Admission_Student = default(EntityRef<Admission_Student>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Student_ID", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string Student_ID
-		{
-			get
-			{
-				return this._Student_ID;
-			}
-			set
-			{
-				if ((this._Student_ID != value))
-				{
-					this.OnStudent_IDChanging(value);
-					this.SendPropertyChanging();
-					this._Student_ID = value;
-					this.SendPropertyChanged("Student_ID");
-					this.OnStudent_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Admissin_Student_ID", DbType="VarChar(50)")]
-		public string Admissin_Student_ID
-		{
-			get
-			{
-				return this._Admissin_Student_ID;
-			}
-			set
-			{
-				if ((this._Admissin_Student_ID != value))
-				{
-					if (this._Admission_Student.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnAdmissin_Student_IDChanging(value);
-					this.SendPropertyChanging();
-					this._Admissin_Student_ID = value;
-					this.SendPropertyChanged("Admissin_Student_ID");
-					this.OnAdmissin_Student_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Subject_ID", DbType="VarChar(50)")]
-		public string Subject_ID
-		{
-			get
-			{
-				return this._Subject_ID;
-			}
-			set
-			{
-				if ((this._Subject_ID != value))
-				{
-					this.OnSubject_IDChanging(value);
-					this.SendPropertyChanging();
-					this._Subject_ID = value;
-					this.SendPropertyChanged("Subject_ID");
-					this.OnSubject_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Result_ID", DbType="VarChar(50)")]
-		public string Result_ID
-		{
-			get
-			{
-				return this._Result_ID;
-			}
-			set
-			{
-				if ((this._Result_ID != value))
-				{
-					this.OnResult_IDChanging(value);
-					this.SendPropertyChanging();
-					this._Result_ID = value;
-					this.SendPropertyChanged("Result_ID");
-					this.OnResult_IDChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Student_Status", DbType="VarChar(50)")]
-		public string Student_Status
-		{
-			get
-			{
-				return this._Student_Status;
-			}
-			set
-			{
-				if ((this._Student_Status != value))
-				{
-					this.OnStudent_StatusChanging(value);
-					this.SendPropertyChanging();
-					this._Student_Status = value;
-					this.SendPropertyChanged("Student_Status");
-					this.OnStudent_StatusChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Admission_Student_Student", Storage="_Admission_Student", ThisKey="Admissin_Student_ID", OtherKey="Admission_Student_ID", IsForeignKey=true)]
-		public Admission_Student Admission_Student
-		{
-			get
-			{
-				return this._Admission_Student.Entity;
-			}
-			set
-			{
-				Admission_Student previousValue = this._Admission_Student.Entity;
-				if (((previousValue != value) 
-							|| (this._Admission_Student.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._Admission_Student.Entity = null;
-						previousValue.Students.Remove(this);
-					}
-					this._Admission_Student.Entity = value;
-					if ((value != null))
-					{
-						value.Students.Add(this);
-						this._Admissin_Student_ID = value.Admission_Student_ID;
-					}
-					else
-					{
-						this._Admissin_Student_ID = default(string);
-					}
-					this.SendPropertyChanged("Admission_Student");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Teacher")]
 	public partial class Teacher : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -2339,6 +2151,243 @@ namespace School_Administration_Project.DAL
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Student")]
+	public partial class Student : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _Student_ID;
+		
+		private string _Admissin_Student_ID;
+		
+		private string _Student_Status;
+		
+		private EntityRef<Admission_Student> _Admission_Student;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnStudent_IDChanging(string value);
+    partial void OnStudent_IDChanged();
+    partial void OnAdmissin_Student_IDChanging(string value);
+    partial void OnAdmissin_Student_IDChanged();
+    partial void OnStudent_StatusChanging(string value);
+    partial void OnStudent_StatusChanged();
+    #endregion
+		
+		public Student()
+		{
+			this._Admission_Student = default(EntityRef<Admission_Student>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Student_ID", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string Student_ID
+		{
+			get
+			{
+				return this._Student_ID;
+			}
+			set
+			{
+				if ((this._Student_ID != value))
+				{
+					this.OnStudent_IDChanging(value);
+					this.SendPropertyChanging();
+					this._Student_ID = value;
+					this.SendPropertyChanged("Student_ID");
+					this.OnStudent_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Admissin_Student_ID", DbType="VarChar(50)")]
+		public string Admissin_Student_ID
+		{
+			get
+			{
+				return this._Admissin_Student_ID;
+			}
+			set
+			{
+				if ((this._Admissin_Student_ID != value))
+				{
+					if (this._Admission_Student.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnAdmissin_Student_IDChanging(value);
+					this.SendPropertyChanging();
+					this._Admissin_Student_ID = value;
+					this.SendPropertyChanged("Admissin_Student_ID");
+					this.OnAdmissin_Student_IDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Student_Status", DbType="VarChar(50)")]
+		public string Student_Status
+		{
+			get
+			{
+				return this._Student_Status;
+			}
+			set
+			{
+				if ((this._Student_Status != value))
+				{
+					this.OnStudent_StatusChanging(value);
+					this.SendPropertyChanging();
+					this._Student_Status = value;
+					this.SendPropertyChanged("Student_Status");
+					this.OnStudent_StatusChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="Admission_Student_Student", Storage="_Admission_Student", ThisKey="Admissin_Student_ID", OtherKey="Admission_Student_ID", IsForeignKey=true)]
+		public Admission_Student Admission_Student
+		{
+			get
+			{
+				return this._Admission_Student.Entity;
+			}
+			set
+			{
+				Admission_Student previousValue = this._Admission_Student.Entity;
+				if (((previousValue != value) 
+							|| (this._Admission_Student.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._Admission_Student.Entity = null;
+						previousValue.Students.Remove(this);
+					}
+					this._Admission_Student.Entity = value;
+					if ((value != null))
+					{
+						value.Students.Add(this);
+						this._Admissin_Student_ID = value.Admission_Student_ID;
+					}
+					else
+					{
+						this._Admissin_Student_ID = default(string);
+					}
+					this.SendPropertyChanged("Admission_Student");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Tracker")]
+	public partial class Tracker : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _Traking_Name;
+		
+		private string _Tracking_Number;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnTraking_NameChanging(string value);
+    partial void OnTraking_NameChanged();
+    partial void OnTracking_NumberChanging(string value);
+    partial void OnTracking_NumberChanged();
+    #endregion
+		
+		public Tracker()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Traking_Name", DbType="VarChar(50) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string Traking_Name
+		{
+			get
+			{
+				return this._Traking_Name;
+			}
+			set
+			{
+				if ((this._Traking_Name != value))
+				{
+					this.OnTraking_NameChanging(value);
+					this.SendPropertyChanging();
+					this._Traking_Name = value;
+					this.SendPropertyChanged("Traking_Name");
+					this.OnTraking_NameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Tracking_Number", DbType="VarChar(50)")]
+		public string Tracking_Number
+		{
+			get
+			{
+				return this._Tracking_Number;
+			}
+			set
+			{
+				if ((this._Tracking_Number != value))
+				{
+					this.OnTracking_NumberChanging(value);
+					this.SendPropertyChanging();
+					this._Tracking_Number = value;
+					this.SendPropertyChanged("Tracking_Number");
+					this.OnTracking_NumberChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Inventory")]
 	public partial class Inventory : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -2347,13 +2396,41 @@ namespace School_Administration_Project.DAL
 		
 		private string _Inventory_ID;
 		
-		private string _Inventory_Name;
+		private string _Printer;
 		
-		private System.Nullable<int> _Count;
+		private string _Computer;
 		
-		private System.Nullable<System.DateTime> _Last_Added_Date;
+		private string _Mouse;
 		
-		private System.Nullable<int> _Last_Added_Count;
+		private string _Keyboard;
+		
+		private string _Projector;
+		
+		private string _Camera;
+		
+		private string _Whiteboard;
+		
+		private string _Marker;
+		
+		private string _Pencil;
+		
+		private string _Clock;
+		
+		private string _Paperbundle;
+		
+		private string _Pen;
+		
+		private string _Duster;
+		
+		private string _Geometrybox;
+		
+		private string _Ruler;
+		
+		private string _Chair;
+		
+		private string _Bench;
+		
+		private string _Table;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -2361,14 +2438,42 @@ namespace School_Administration_Project.DAL
     partial void OnCreated();
     partial void OnInventory_IDChanging(string value);
     partial void OnInventory_IDChanged();
-    partial void OnInventory_NameChanging(string value);
-    partial void OnInventory_NameChanged();
-    partial void OnCountChanging(System.Nullable<int> value);
-    partial void OnCountChanged();
-    partial void OnLast_Added_DateChanging(System.Nullable<System.DateTime> value);
-    partial void OnLast_Added_DateChanged();
-    partial void OnLast_Added_CountChanging(System.Nullable<int> value);
-    partial void OnLast_Added_CountChanged();
+    partial void OnPrinterChanging(string value);
+    partial void OnPrinterChanged();
+    partial void OnComputerChanging(string value);
+    partial void OnComputerChanged();
+    partial void OnMouseChanging(string value);
+    partial void OnMouseChanged();
+    partial void OnKeyboardChanging(string value);
+    partial void OnKeyboardChanged();
+    partial void OnProjectorChanging(string value);
+    partial void OnProjectorChanged();
+    partial void OnCameraChanging(string value);
+    partial void OnCameraChanged();
+    partial void OnWhiteboardChanging(string value);
+    partial void OnWhiteboardChanged();
+    partial void OnMarkerChanging(string value);
+    partial void OnMarkerChanged();
+    partial void OnPencilChanging(string value);
+    partial void OnPencilChanged();
+    partial void OnClockChanging(string value);
+    partial void OnClockChanged();
+    partial void OnPaperbundleChanging(string value);
+    partial void OnPaperbundleChanged();
+    partial void OnPenChanging(string value);
+    partial void OnPenChanged();
+    partial void OnDusterChanging(string value);
+    partial void OnDusterChanged();
+    partial void OnGeometryboxChanging(string value);
+    partial void OnGeometryboxChanged();
+    partial void OnRulerChanging(string value);
+    partial void OnRulerChanged();
+    partial void OnChairChanging(string value);
+    partial void OnChairChanged();
+    partial void OnBenchChanging(string value);
+    partial void OnBenchChanged();
+    partial void OnTableChanging(string value);
+    partial void OnTableChanged();
     #endregion
 		
 		public Inventory()
@@ -2396,82 +2501,362 @@ namespace School_Administration_Project.DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Inventory_Name", DbType="VarChar(50)")]
-		public string Inventory_Name
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Printer", DbType="VarChar(50)")]
+		public string Printer
 		{
 			get
 			{
-				return this._Inventory_Name;
+				return this._Printer;
 			}
 			set
 			{
-				if ((this._Inventory_Name != value))
+				if ((this._Printer != value))
 				{
-					this.OnInventory_NameChanging(value);
+					this.OnPrinterChanging(value);
 					this.SendPropertyChanging();
-					this._Inventory_Name = value;
-					this.SendPropertyChanged("Inventory_Name");
-					this.OnInventory_NameChanged();
+					this._Printer = value;
+					this.SendPropertyChanged("Printer");
+					this.OnPrinterChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Count", DbType="Int")]
-		public System.Nullable<int> Count
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Computer", DbType="VarChar(50)")]
+		public string Computer
 		{
 			get
 			{
-				return this._Count;
+				return this._Computer;
 			}
 			set
 			{
-				if ((this._Count != value))
+				if ((this._Computer != value))
 				{
-					this.OnCountChanging(value);
+					this.OnComputerChanging(value);
 					this.SendPropertyChanging();
-					this._Count = value;
-					this.SendPropertyChanged("Count");
-					this.OnCountChanged();
+					this._Computer = value;
+					this.SendPropertyChanged("Computer");
+					this.OnComputerChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Last_Added_Date", DbType="Date")]
-		public System.Nullable<System.DateTime> Last_Added_Date
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mouse", DbType="VarChar(50)")]
+		public string Mouse
 		{
 			get
 			{
-				return this._Last_Added_Date;
+				return this._Mouse;
 			}
 			set
 			{
-				if ((this._Last_Added_Date != value))
+				if ((this._Mouse != value))
 				{
-					this.OnLast_Added_DateChanging(value);
+					this.OnMouseChanging(value);
 					this.SendPropertyChanging();
-					this._Last_Added_Date = value;
-					this.SendPropertyChanged("Last_Added_Date");
-					this.OnLast_Added_DateChanged();
+					this._Mouse = value;
+					this.SendPropertyChanged("Mouse");
+					this.OnMouseChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Last_Added_Count", DbType="Int")]
-		public System.Nullable<int> Last_Added_Count
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Keyboard", DbType="VarChar(50)")]
+		public string Keyboard
 		{
 			get
 			{
-				return this._Last_Added_Count;
+				return this._Keyboard;
 			}
 			set
 			{
-				if ((this._Last_Added_Count != value))
+				if ((this._Keyboard != value))
 				{
-					this.OnLast_Added_CountChanging(value);
+					this.OnKeyboardChanging(value);
 					this.SendPropertyChanging();
-					this._Last_Added_Count = value;
-					this.SendPropertyChanged("Last_Added_Count");
-					this.OnLast_Added_CountChanged();
+					this._Keyboard = value;
+					this.SendPropertyChanged("Keyboard");
+					this.OnKeyboardChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Projector", DbType="VarChar(50)")]
+		public string Projector
+		{
+			get
+			{
+				return this._Projector;
+			}
+			set
+			{
+				if ((this._Projector != value))
+				{
+					this.OnProjectorChanging(value);
+					this.SendPropertyChanging();
+					this._Projector = value;
+					this.SendPropertyChanged("Projector");
+					this.OnProjectorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Camera", DbType="VarChar(50)")]
+		public string Camera
+		{
+			get
+			{
+				return this._Camera;
+			}
+			set
+			{
+				if ((this._Camera != value))
+				{
+					this.OnCameraChanging(value);
+					this.SendPropertyChanging();
+					this._Camera = value;
+					this.SendPropertyChanged("Camera");
+					this.OnCameraChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Whiteboard", DbType="VarChar(50)")]
+		public string Whiteboard
+		{
+			get
+			{
+				return this._Whiteboard;
+			}
+			set
+			{
+				if ((this._Whiteboard != value))
+				{
+					this.OnWhiteboardChanging(value);
+					this.SendPropertyChanging();
+					this._Whiteboard = value;
+					this.SendPropertyChanged("Whiteboard");
+					this.OnWhiteboardChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Marker", DbType="VarChar(50)")]
+		public string Marker
+		{
+			get
+			{
+				return this._Marker;
+			}
+			set
+			{
+				if ((this._Marker != value))
+				{
+					this.OnMarkerChanging(value);
+					this.SendPropertyChanging();
+					this._Marker = value;
+					this.SendPropertyChanged("Marker");
+					this.OnMarkerChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Pencil", DbType="VarChar(50)")]
+		public string Pencil
+		{
+			get
+			{
+				return this._Pencil;
+			}
+			set
+			{
+				if ((this._Pencil != value))
+				{
+					this.OnPencilChanging(value);
+					this.SendPropertyChanging();
+					this._Pencil = value;
+					this.SendPropertyChanged("Pencil");
+					this.OnPencilChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Clock", DbType="VarChar(50)")]
+		public string Clock
+		{
+			get
+			{
+				return this._Clock;
+			}
+			set
+			{
+				if ((this._Clock != value))
+				{
+					this.OnClockChanging(value);
+					this.SendPropertyChanging();
+					this._Clock = value;
+					this.SendPropertyChanged("Clock");
+					this.OnClockChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Paperbundle", DbType="VarChar(50)")]
+		public string Paperbundle
+		{
+			get
+			{
+				return this._Paperbundle;
+			}
+			set
+			{
+				if ((this._Paperbundle != value))
+				{
+					this.OnPaperbundleChanging(value);
+					this.SendPropertyChanging();
+					this._Paperbundle = value;
+					this.SendPropertyChanged("Paperbundle");
+					this.OnPaperbundleChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Pen", DbType="VarChar(50)")]
+		public string Pen
+		{
+			get
+			{
+				return this._Pen;
+			}
+			set
+			{
+				if ((this._Pen != value))
+				{
+					this.OnPenChanging(value);
+					this.SendPropertyChanging();
+					this._Pen = value;
+					this.SendPropertyChanged("Pen");
+					this.OnPenChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Duster", DbType="VarChar(50)")]
+		public string Duster
+		{
+			get
+			{
+				return this._Duster;
+			}
+			set
+			{
+				if ((this._Duster != value))
+				{
+					this.OnDusterChanging(value);
+					this.SendPropertyChanging();
+					this._Duster = value;
+					this.SendPropertyChanged("Duster");
+					this.OnDusterChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Geometrybox", DbType="VarChar(50)")]
+		public string Geometrybox
+		{
+			get
+			{
+				return this._Geometrybox;
+			}
+			set
+			{
+				if ((this._Geometrybox != value))
+				{
+					this.OnGeometryboxChanging(value);
+					this.SendPropertyChanging();
+					this._Geometrybox = value;
+					this.SendPropertyChanged("Geometrybox");
+					this.OnGeometryboxChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Ruler", DbType="VarChar(50)")]
+		public string Ruler
+		{
+			get
+			{
+				return this._Ruler;
+			}
+			set
+			{
+				if ((this._Ruler != value))
+				{
+					this.OnRulerChanging(value);
+					this.SendPropertyChanging();
+					this._Ruler = value;
+					this.SendPropertyChanged("Ruler");
+					this.OnRulerChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Chair", DbType="VarChar(50)")]
+		public string Chair
+		{
+			get
+			{
+				return this._Chair;
+			}
+			set
+			{
+				if ((this._Chair != value))
+				{
+					this.OnChairChanging(value);
+					this.SendPropertyChanging();
+					this._Chair = value;
+					this.SendPropertyChanged("Chair");
+					this.OnChairChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Bench", DbType="VarChar(50)")]
+		public string Bench
+		{
+			get
+			{
+				return this._Bench;
+			}
+			set
+			{
+				if ((this._Bench != value))
+				{
+					this.OnBenchChanging(value);
+					this.SendPropertyChanging();
+					this._Bench = value;
+					this.SendPropertyChanged("Bench");
+					this.OnBenchChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Name="[Table]", Storage="_Table", DbType="VarChar(50)")]
+		public string Table
+		{
+			get
+			{
+				return this._Table;
+			}
+			set
+			{
+				if ((this._Table != value))
+				{
+					this.OnTableChanging(value);
+					this.SendPropertyChanging();
+					this._Table = value;
+					this.SendPropertyChanged("Table");
+					this.OnTableChanged();
 				}
 			}
 		}
