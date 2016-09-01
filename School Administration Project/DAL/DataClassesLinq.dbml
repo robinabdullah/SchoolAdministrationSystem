@@ -1,33 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="StudentDB" Class="DataClassesLinqDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=AL-JABZ\SQLEXPRESS;Initial Catalog=StudentDB;Integrated Security=True" SettingsObjectName="School_Administration_Project.Properties.Settings" SettingsPropertyName="StudentDBConnectionString2" Provider="System.Data.SqlClient" />
-  <Table Name="dbo.Admin" Member="Admins">
-    <Type Name="Admin">
-      <Column Name="Admin_ID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="Admin_Role" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="First_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Last_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Full_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Gender" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Fathers_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Mothers_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Address" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Mobile" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="DOB" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="Blood_Group" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Country" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Religoin" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Recruited_Session" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Designation" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Status_Time_From" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="Status_Time_To" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="Last_Login_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="Pasword" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Joined_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="Resigned_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.Admission_Exam_Result" Member="Admission_Exam_Results">
     <Type Name="Admission_Exam_Result">
       <Column Name="Admission_Exam_ID" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -133,6 +105,35 @@
       <Column Name="Chair" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="Bench" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="[Table]" Member="Table" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Admin" Member="Admins">
+    <Type Name="Admin">
+      <Column Name="Admin_ID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Admin_Role" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="First_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Last_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Full_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Gender" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Fathers_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Mothers_Name" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Mobile" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="DOB" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Blood_Group" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Country" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Religoin" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Recruited_Session" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Designation" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Marital_Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Status_Time_From" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Status_Time_To" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Last_Login_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Pasword" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Joined_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="Resigned_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
     </Type>
   </Table>
 </Database>

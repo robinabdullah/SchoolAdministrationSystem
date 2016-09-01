@@ -2,12 +2,6 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 15.125" name="DataClassesLinq">
   <DataContextMoniker Name="/DataClassesLinqDataContext" />
   <nestedChildShapes>
-    <classShape Id="4f50a144-ea8d-45f7-9b17-369bdd99c621" absoluteBounds="3.75, 7.125, 2, 5.4246240234374987">
-      <DataClassMoniker Name="/DataClassesLinqDataContext/Admin" />
-      <nestedChildShapes>
-        <elementListCompartment Id="b4da7e4e-2487-4e80-8d37-f26a80f35948" absoluteBounds="3.765, 7.585, 1.9700000000000002, 4.8646240234375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="a2c31bb2-7d86-4ff7-ba36-c733610f12f7" absoluteBounds="3.5, 0.75, 2, 1.9631982421875">
       <DataClassMoniker Name="/DataClassesLinqDataContext/Admission_Exam_Result" />
       <nestedChildShapes>
@@ -20,7 +14,7 @@
         <elementListCompartment Id="ccd64d28-f27e-4c32-bf4e-b9f530101ccd" absoluteBounds="0.765, 2.835, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.75 : 5.98960611979167); (3.96875 : 5.98960611979167); (3.96875 : 2.7131982421875)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+    <associationConnector edgePoints="[(2.75 : 5.98960611979167); (3.96875 : 5.98960611979167); (3.96875 : 2.7131982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DataClassesLinqDataContext/Admission_Student/Admission_Student_Admission_Exam_Result" />
       <nodes>
         <classShapeMoniker Id="832aae54-46d4-43b6-a649-8f33cf0cf841" />
@@ -70,6 +64,12 @@
       <DataClassMoniker Name="/DataClassesLinqDataContext/Inventory" />
       <nestedChildShapes>
         <elementListCompartment Id="521e46dc-dcc6-403a-823c-879716f89c1b" absoluteBounds="8.64, 3.335, 1.9700000000000002, 3.903116861979167" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="629b3d48-6a03-4442-8a05-fa49b8717979" absoluteBounds="4.625, 7.75, 2, 5.6169254557291657">
+      <DataClassMoniker Name="/DataClassesLinqDataContext/Admin" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c4efb352-8e91-4565-b3c5-64d825e0c338" absoluteBounds="4.64, 8.21, 1.9700000000000002, 5.0569254557291661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

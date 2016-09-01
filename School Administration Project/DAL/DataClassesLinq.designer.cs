@@ -80,14 +80,6 @@ namespace School_Administration_Project.DAL
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<Admin> Admins
-		{
-			get
-			{
-				return this.GetTable<Admin>();
-			}
-		}
-		
 		public System.Data.Linq.Table<Admission_Exam_Result> Admission_Exam_Results
 		{
 			get
@@ -135,445 +127,12 @@ namespace School_Administration_Project.DAL
 				return this.GetTable<Inventory>();
 			}
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Admin")]
-	public partial class Admin
-	{
 		
-		private string _Admin_ID;
-		
-		private string _Admin_Role;
-		
-		private string _First_Name;
-		
-		private string _Last_Name;
-		
-		private string _Full_Name;
-		
-		private string _Gender;
-		
-		private string _Fathers_Name;
-		
-		private string _Mothers_Name;
-		
-		private string _Address;
-		
-		private string _Mobile;
-		
-		private string _Email;
-		
-		private System.Nullable<System.DateTime> _DOB;
-		
-		private string _Blood_Group;
-		
-		private string _Country;
-		
-		private string _Religoin;
-		
-		private string _Recruited_Session;
-		
-		private string _Designation;
-		
-		private string _Status;
-		
-		private System.Nullable<System.DateTime> _Status_Time_From;
-		
-		private System.Nullable<System.DateTime> _Status_Time_To;
-		
-		private System.Nullable<System.DateTime> _Last_Login_Date;
-		
-		private string _Pasword;
-		
-		private System.Nullable<System.DateTime> _Joined_Date;
-		
-		private System.Nullable<System.DateTime> _Resigned_Date;
-		
-		public Admin()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Admin_ID", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string Admin_ID
+		public System.Data.Linq.Table<Admin> Admins
 		{
 			get
 			{
-				return this._Admin_ID;
-			}
-			set
-			{
-				if ((this._Admin_ID != value))
-				{
-					this._Admin_ID = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Admin_Role", DbType="VarChar(50)")]
-		public string Admin_Role
-		{
-			get
-			{
-				return this._Admin_Role;
-			}
-			set
-			{
-				if ((this._Admin_Role != value))
-				{
-					this._Admin_Role = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_First_Name", DbType="VarChar(50)")]
-		public string First_Name
-		{
-			get
-			{
-				return this._First_Name;
-			}
-			set
-			{
-				if ((this._First_Name != value))
-				{
-					this._First_Name = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Last_Name", DbType="VarChar(50)")]
-		public string Last_Name
-		{
-			get
-			{
-				return this._Last_Name;
-			}
-			set
-			{
-				if ((this._Last_Name != value))
-				{
-					this._Last_Name = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Full_Name", DbType="VarChar(50)")]
-		public string Full_Name
-		{
-			get
-			{
-				return this._Full_Name;
-			}
-			set
-			{
-				if ((this._Full_Name != value))
-				{
-					this._Full_Name = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Gender", DbType="VarChar(50)")]
-		public string Gender
-		{
-			get
-			{
-				return this._Gender;
-			}
-			set
-			{
-				if ((this._Gender != value))
-				{
-					this._Gender = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fathers_Name", DbType="VarChar(50)")]
-		public string Fathers_Name
-		{
-			get
-			{
-				return this._Fathers_Name;
-			}
-			set
-			{
-				if ((this._Fathers_Name != value))
-				{
-					this._Fathers_Name = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mothers_Name", DbType="VarChar(50)")]
-		public string Mothers_Name
-		{
-			get
-			{
-				return this._Mothers_Name;
-			}
-			set
-			{
-				if ((this._Mothers_Name != value))
-				{
-					this._Mothers_Name = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="VarChar(50)")]
-		public string Address
-		{
-			get
-			{
-				return this._Address;
-			}
-			set
-			{
-				if ((this._Address != value))
-				{
-					this._Address = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mobile", DbType="VarChar(50)")]
-		public string Mobile
-		{
-			get
-			{
-				return this._Mobile;
-			}
-			set
-			{
-				if ((this._Mobile != value))
-				{
-					this._Mobile = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(50)")]
-		public string Email
-		{
-			get
-			{
-				return this._Email;
-			}
-			set
-			{
-				if ((this._Email != value))
-				{
-					this._Email = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DOB", DbType="Date")]
-		public System.Nullable<System.DateTime> DOB
-		{
-			get
-			{
-				return this._DOB;
-			}
-			set
-			{
-				if ((this._DOB != value))
-				{
-					this._DOB = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Blood_Group", DbType="VarChar(50)")]
-		public string Blood_Group
-		{
-			get
-			{
-				return this._Blood_Group;
-			}
-			set
-			{
-				if ((this._Blood_Group != value))
-				{
-					this._Blood_Group = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Country", DbType="VarChar(50)")]
-		public string Country
-		{
-			get
-			{
-				return this._Country;
-			}
-			set
-			{
-				if ((this._Country != value))
-				{
-					this._Country = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Religoin", DbType="VarChar(50)")]
-		public string Religoin
-		{
-			get
-			{
-				return this._Religoin;
-			}
-			set
-			{
-				if ((this._Religoin != value))
-				{
-					this._Religoin = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Recruited_Session", DbType="VarChar(50)")]
-		public string Recruited_Session
-		{
-			get
-			{
-				return this._Recruited_Session;
-			}
-			set
-			{
-				if ((this._Recruited_Session != value))
-				{
-					this._Recruited_Session = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Designation", DbType="VarChar(50)")]
-		public string Designation
-		{
-			get
-			{
-				return this._Designation;
-			}
-			set
-			{
-				if ((this._Designation != value))
-				{
-					this._Designation = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="VarChar(50)")]
-		public string Status
-		{
-			get
-			{
-				return this._Status;
-			}
-			set
-			{
-				if ((this._Status != value))
-				{
-					this._Status = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status_Time_From", DbType="Date")]
-		public System.Nullable<System.DateTime> Status_Time_From
-		{
-			get
-			{
-				return this._Status_Time_From;
-			}
-			set
-			{
-				if ((this._Status_Time_From != value))
-				{
-					this._Status_Time_From = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status_Time_To", DbType="Date")]
-		public System.Nullable<System.DateTime> Status_Time_To
-		{
-			get
-			{
-				return this._Status_Time_To;
-			}
-			set
-			{
-				if ((this._Status_Time_To != value))
-				{
-					this._Status_Time_To = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Last_Login_Date", DbType="Date")]
-		public System.Nullable<System.DateTime> Last_Login_Date
-		{
-			get
-			{
-				return this._Last_Login_Date;
-			}
-			set
-			{
-				if ((this._Last_Login_Date != value))
-				{
-					this._Last_Login_Date = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Pasword", DbType="VarChar(50)")]
-		public string Pasword
-		{
-			get
-			{
-				return this._Pasword;
-			}
-			set
-			{
-				if ((this._Pasword != value))
-				{
-					this._Pasword = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Joined_Date", DbType="Date")]
-		public System.Nullable<System.DateTime> Joined_Date
-		{
-			get
-			{
-				return this._Joined_Date;
-			}
-			set
-			{
-				if ((this._Joined_Date != value))
-				{
-					this._Joined_Date = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Resigned_Date", DbType="Date")]
-		public System.Nullable<System.DateTime> Resigned_Date
-		{
-			get
-			{
-				return this._Resigned_Date;
-			}
-			set
-			{
-				if ((this._Resigned_Date != value))
-				{
-					this._Resigned_Date = value;
-				}
+				return this.GetTable<Admin>();
 			}
 		}
 	}
@@ -2878,6 +2437,465 @@ namespace School_Administration_Project.DAL
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Admin")]
+	public partial class Admin
+	{
+		
+		private string _Admin_ID;
+		
+		private string _Admin_Role;
+		
+		private string _First_Name;
+		
+		private string _Last_Name;
+		
+		private string _Full_Name;
+		
+		private string _Gender;
+		
+		private string _Fathers_Name;
+		
+		private string _Mothers_Name;
+		
+		private string _Address;
+		
+		private string _Mobile;
+		
+		private string _Email;
+		
+		private System.Nullable<System.DateTime> _DOB;
+		
+		private string _Blood_Group;
+		
+		private string _Country;
+		
+		private string _Religoin;
+		
+		private string _Recruited_Session;
+		
+		private string _Designation;
+		
+		private string _Status;
+		
+		private string _Marital_Status;
+		
+		private System.Nullable<System.DateTime> _Status_Time_From;
+		
+		private System.Nullable<System.DateTime> _Status_Time_To;
+		
+		private System.Nullable<System.DateTime> _Last_Login_Date;
+		
+		private string _Pasword;
+		
+		private System.Nullable<System.DateTime> _Joined_Date;
+		
+		private System.Nullable<System.DateTime> _Resigned_Date;
+		
+		public Admin()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Admin_ID", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string Admin_ID
+		{
+			get
+			{
+				return this._Admin_ID;
+			}
+			set
+			{
+				if ((this._Admin_ID != value))
+				{
+					this._Admin_ID = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Admin_Role", DbType="VarChar(50)")]
+		public string Admin_Role
+		{
+			get
+			{
+				return this._Admin_Role;
+			}
+			set
+			{
+				if ((this._Admin_Role != value))
+				{
+					this._Admin_Role = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_First_Name", DbType="VarChar(50)")]
+		public string First_Name
+		{
+			get
+			{
+				return this._First_Name;
+			}
+			set
+			{
+				if ((this._First_Name != value))
+				{
+					this._First_Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Last_Name", DbType="VarChar(50)")]
+		public string Last_Name
+		{
+			get
+			{
+				return this._Last_Name;
+			}
+			set
+			{
+				if ((this._Last_Name != value))
+				{
+					this._Last_Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Full_Name", DbType="VarChar(50)")]
+		public string Full_Name
+		{
+			get
+			{
+				return this._Full_Name;
+			}
+			set
+			{
+				if ((this._Full_Name != value))
+				{
+					this._Full_Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Gender", DbType="VarChar(50)")]
+		public string Gender
+		{
+			get
+			{
+				return this._Gender;
+			}
+			set
+			{
+				if ((this._Gender != value))
+				{
+					this._Gender = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Fathers_Name", DbType="VarChar(50)")]
+		public string Fathers_Name
+		{
+			get
+			{
+				return this._Fathers_Name;
+			}
+			set
+			{
+				if ((this._Fathers_Name != value))
+				{
+					this._Fathers_Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mothers_Name", DbType="VarChar(50)")]
+		public string Mothers_Name
+		{
+			get
+			{
+				return this._Mothers_Name;
+			}
+			set
+			{
+				if ((this._Mothers_Name != value))
+				{
+					this._Mothers_Name = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Address", DbType="VarChar(50)")]
+		public string Address
+		{
+			get
+			{
+				return this._Address;
+			}
+			set
+			{
+				if ((this._Address != value))
+				{
+					this._Address = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Mobile", DbType="VarChar(50)")]
+		public string Mobile
+		{
+			get
+			{
+				return this._Mobile;
+			}
+			set
+			{
+				if ((this._Mobile != value))
+				{
+					this._Mobile = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Email", DbType="VarChar(50)")]
+		public string Email
+		{
+			get
+			{
+				return this._Email;
+			}
+			set
+			{
+				if ((this._Email != value))
+				{
+					this._Email = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DOB", DbType="Date")]
+		public System.Nullable<System.DateTime> DOB
+		{
+			get
+			{
+				return this._DOB;
+			}
+			set
+			{
+				if ((this._DOB != value))
+				{
+					this._DOB = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Blood_Group", DbType="VarChar(50)")]
+		public string Blood_Group
+		{
+			get
+			{
+				return this._Blood_Group;
+			}
+			set
+			{
+				if ((this._Blood_Group != value))
+				{
+					this._Blood_Group = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Country", DbType="VarChar(50)")]
+		public string Country
+		{
+			get
+			{
+				return this._Country;
+			}
+			set
+			{
+				if ((this._Country != value))
+				{
+					this._Country = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Religoin", DbType="VarChar(50)")]
+		public string Religoin
+		{
+			get
+			{
+				return this._Religoin;
+			}
+			set
+			{
+				if ((this._Religoin != value))
+				{
+					this._Religoin = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Recruited_Session", DbType="VarChar(50)")]
+		public string Recruited_Session
+		{
+			get
+			{
+				return this._Recruited_Session;
+			}
+			set
+			{
+				if ((this._Recruited_Session != value))
+				{
+					this._Recruited_Session = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Designation", DbType="VarChar(50)")]
+		public string Designation
+		{
+			get
+			{
+				return this._Designation;
+			}
+			set
+			{
+				if ((this._Designation != value))
+				{
+					this._Designation = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status", DbType="VarChar(50)")]
+		public string Status
+		{
+			get
+			{
+				return this._Status;
+			}
+			set
+			{
+				if ((this._Status != value))
+				{
+					this._Status = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Marital_Status", DbType="VarChar(50)")]
+		public string Marital_Status
+		{
+			get
+			{
+				return this._Marital_Status;
+			}
+			set
+			{
+				if ((this._Marital_Status != value))
+				{
+					this._Marital_Status = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status_Time_From", DbType="Date")]
+		public System.Nullable<System.DateTime> Status_Time_From
+		{
+			get
+			{
+				return this._Status_Time_From;
+			}
+			set
+			{
+				if ((this._Status_Time_From != value))
+				{
+					this._Status_Time_From = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Status_Time_To", DbType="Date")]
+		public System.Nullable<System.DateTime> Status_Time_To
+		{
+			get
+			{
+				return this._Status_Time_To;
+			}
+			set
+			{
+				if ((this._Status_Time_To != value))
+				{
+					this._Status_Time_To = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Last_Login_Date", DbType="Date")]
+		public System.Nullable<System.DateTime> Last_Login_Date
+		{
+			get
+			{
+				return this._Last_Login_Date;
+			}
+			set
+			{
+				if ((this._Last_Login_Date != value))
+				{
+					this._Last_Login_Date = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Pasword", DbType="VarChar(50)")]
+		public string Pasword
+		{
+			get
+			{
+				return this._Pasword;
+			}
+			set
+			{
+				if ((this._Pasword != value))
+				{
+					this._Pasword = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Joined_Date", DbType="Date")]
+		public System.Nullable<System.DateTime> Joined_Date
+		{
+			get
+			{
+				return this._Joined_Date;
+			}
+			set
+			{
+				if ((this._Joined_Date != value))
+				{
+					this._Joined_Date = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Resigned_Date", DbType="Date")]
+		public System.Nullable<System.DateTime> Resigned_Date
+		{
+			get
+			{
+				return this._Resigned_Date;
+			}
+			set
+			{
+				if ((this._Resigned_Date != value))
+				{
+					this._Resigned_Date = value;
+				}
 			}
 		}
 	}
