@@ -56,10 +56,6 @@
         <TextBox x:Name="Soap" HorizontalAlignment="Left" Height="26" Margin="859,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173" IsEnabled="False" />
         <Button Content="Back" HorizontalAlignment="Left" Margin="159,579,0,0" VerticalAlignment="Top" Width="391" Height="71" FontSize="26" Click="Button_Back"/>
         <Button x:Name="Edit" Content="EDIT" HorizontalAlignment="Left" Margin="614,579,0,0" VerticalAlignment="Top" Width="391" Height="71" FontSize="26" Click="Button_DONE"/>
-        <Controls:NumericUpDown x:Name="KeyboardUpDown" HorizontalAlignment="Left" Margin="415,302,0,0" VerticalAlignment="Top" Minimum="0" Maximum="100"/>
-        <Controls:NumericUpDown x:Name="PrinterUpDown" HorizontalAlignment="Left" Margin="415,166,0,0" VerticalAlignment="Top" Minimum="0" Maximum="100"/>
-        <Controls:NumericUpDown x:Name="ComputerUpDown" HorizontalAlignment="Left" Margin="415,212,0,0" VerticalAlignment="Top" Minimum="0" Maximum="100"/>
-        <Controls:NumericUpDown x:Name="MouseUpDown" HorizontalAlignment="Left" Margin="415,256,0,0" VerticalAlignment="Top" Minimum="0" Maximum="100"/>
 
     </Grid>
 </Controls:MetroWindow>
