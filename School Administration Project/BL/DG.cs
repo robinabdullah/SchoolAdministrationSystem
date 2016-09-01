@@ -9,11 +9,11 @@ namespace School_Administration_Project.BL
     class EligibleStudentListDG
     {
         private string id;
-        private string mobile;
+        private string name;
+        private string gender;        
         private string grade;
         private string group;
-        private string gender;
-        private string name;
+        private string mobile;        
         private string viva;
         private string written;        
         private string total;
@@ -32,16 +32,29 @@ namespace School_Administration_Project.BL
             }
         }
 
-        public string Mobile
+        public string Name
         {
             get
             {
-                return mobile;
+                return name;
             }
 
             set
             {
-                mobile = value;
+                name = value;
+            }
+        }
+
+        public string Gender
+        {
+            get
+            {
+                return gender;
+            }
+
+            set
+            {
+                gender = value;
             }
         }
 
@@ -71,29 +84,16 @@ namespace School_Administration_Project.BL
             }
         }
 
-        public string Gender
+        public string Mobile
         {
             get
             {
-                return gender;
+                return mobile;
             }
 
             set
             {
-                gender = value;
-            }
-        }
-
-        public string Name
-        {
-            get
-            {
-                return name;
-            }
-
-            set
-            {
-                name = value;
+                mobile = value;
             }
         }
 

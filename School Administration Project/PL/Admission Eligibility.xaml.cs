@@ -38,7 +38,7 @@ namespace School_Administration_Project.PL
 
             DAL.Admission_Student st = a.getAdmissionStudent(id.Text);
 
-            
+
 
             if (st == null)
             {
@@ -48,8 +48,8 @@ namespace School_Administration_Project.PL
                 interestedGrade.Clear();
                 gender.Clear();
                 group.Clear();
-                eligibleMarks.Content = "Written :     Viva : " ;
-                teacherIDs.Content = "Written :    Viva : " ;
+                eligibleMarks.Content = "Written :     Viva : ";
+                teacherIDs.Content = "Written :    Viva : ";
                 written_mark.Clear();
                 vivaMark.Clear();
                 Total.Clear();
@@ -67,9 +67,17 @@ namespace School_Administration_Project.PL
                 interestedGrade.Text = st.Interested_Grade;
                 gender.Text = st.Gender;
                 group.Text = st.Group;
-                eligibleMarks.Content = "Written : " + stResult.Writtern_Exam_Mark + "   Viva : " + stResult.Viva_Exam_Mark;
-                teacherIDs.Content = "Written : " + stResult.Written_Examiner_ID + "   Viva : " + stResult.Viva_Examiner_ID;
-
+                if (stResult != null)
+                {
+                    eligibleMarks.Content = "Written : " + stResult.Writtern_Exam_Mark + "   Viva : " + stResult.Viva_Exam_Mark;
+                    teacherIDs.Content = "Written : " + stResult.Written_Examiner_ID + "   Viva : " + stResult.Viva_Examiner_ID;
+                }
+                else
+                {
+                    eligibleMarks.Content = "Written : " + 0 + "   Viva : " + 0;
+                    teacherIDs.Content = "Written : " + 0 + "   Viva : " + 0;
+                }
+                
                 written_mark.Text = stResult.Writtern_Exam_Mark;
                 vivaMark.Text = stResult.Viva_Exam_Mark;
 

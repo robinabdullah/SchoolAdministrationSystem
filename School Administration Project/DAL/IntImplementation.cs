@@ -14,6 +14,75 @@ namespace School_Administration_Project.DAL
             throw new NotImplementedException();
         }
 
+        public bool addStudent(string admission_Student_ID)
+        {
+
+            try
+            {
+                DataClassesLinqDataContext db = new DataClassesLinqDataContext
+                                (DataAccessClassLinq.connectionStringLinq);
+
+                var track = from abc in db.Trackers
+                            where abc.Traking_Name.Equals("Student_ID")
+                            select abc;
+
+                int middlePortion = -1;
+                foreach (Tracker trackingNumber in track)
+                    middlePortion = int.Parse(trackingNumber.Tracking_Number);
+                
+
+                string student_ID = getNewStudentID();
+
+                Student student = new Student();
+
+                student.Admissin_Student_ID = admission_Student_ID;
+                student.Student_ID = student_ID;
+                student.Student_Status = "Active";
+
+                db.Students.InsertOnSubmit(student);
+                db.SubmitChanges();
+
+
+                foreach (Tracker tracker in track)
+                {
+                    middlePortion++;
+                    tracker.Tracking_Number = middlePortion.ToString();
+                    db.SubmitChanges();
+                    break;
+                }
+                
+            }
+            catch
+            {
+                return false;
+            }
+
+
+            return true;
+        }
+
+        public string getNewStudentID()
+        {
+            DataClassesLinqDataContext db = new DataClassesLinqDataContext
+                                (DataAccessClassLinq.connectionStringLinq);
+
+            int middlePortion = -1;
+
+            var track = from abc in db.Trackers
+                        where abc.Traking_Name.Equals("Student_ID")
+                        select abc;
+
+            foreach (Tracker trackingNumber in track)
+                middlePortion = int.Parse(trackingNumber.Tracking_Number);
+            middlePortion++;
+
+            DateTime date = DateTime.Now;
+            string year = date.Year.ToString().Substring(2);
+            string student_ID = year + "-" + middlePortion.ToString("0000");
+
+            return student_ID;
+        }
+
         public List<Student> getAllStudents()
         {
             throw new NotImplementedException();
@@ -21,7 +90,19 @@ namespace School_Administration_Project.DAL
 
         public Student getStudent(string id)
         {
-            throw new NotImplementedException();
+            DataClassesLinqDataContext db = new DataClassesLinqDataContext
+                                (DataAccessClassLinq.connectionStringLinq);
+
+            var std = from e in db.Students
+                      where e.Student_ID.Equals(id)
+                      select e;
+
+            foreach(Student student in std)
+            {
+                return student;
+            }
+
+            return null;
         }
 
         public void updateStudent(Student student)
@@ -40,7 +121,7 @@ namespace School_Administration_Project.DAL
         public void setWrittenResult(string mark, string teacherID, string stdID)
         {
             DataClassesLinqDataContext db = new DataClassesLinqDataContext
-                (DataAccessClassLinq.connectionStringLinq);            
+                (DataAccessClassLinq.connectionStringLinq);
 
             var max = db.Admission_Exam_Results.OrderByDescending(i => i.Admission_Exam_ID).FirstOrDefault();
 
@@ -63,12 +144,12 @@ namespace School_Administration_Project.DAL
                 rs.Admission_Student_ID = stdID;
                 rs.Viva_Exam_Mark = "0";
                 rs.Viva_Examiner_ID = "0";
-                db.Admission_Exam_Results.InsertOnSubmit(rs);                
+                db.Admission_Exam_Results.InsertOnSubmit(rs);
             }
             else
             {
                 re.Writtern_Exam_Mark = mark;
-                re.Written_Examiner_ID = teacherID;                          
+                re.Written_Examiner_ID = teacherID;
             }
 
             db.SubmitChanges();
@@ -81,9 +162,9 @@ namespace School_Administration_Project.DAL
 
             //var max = db.Admission_Exam_Results.OrderByDescending(i => i.Admission_Exam_ID).FirstOrDefault();
 
-            Admission_Exam_Result re= db.Admission_Exam_Results.FirstOrDefault(e => e.Admission_Student_ID.Equals(stdID));
+            Admission_Exam_Result re = db.Admission_Exam_Results.FirstOrDefault(e => e.Admission_Student_ID.Equals(stdID));
 
-            if(re != null)
+            if (re != null)
             {
                 re.Viva_Examiner_ID = teacherID;
                 re.Viva_Exam_Mark = mark;
@@ -93,25 +174,35 @@ namespace School_Administration_Project.DAL
         }
 
 
-        public void addAdmissionStudent(Admission_Student  adStd)
+        public void addAdmissionStudent(Admission_Student adStd)
         {
             DataClassesLinqDataContext db = new DataClassesLinqDataContext
                 (DataAccessClassLinq.connectionStringLinq);
-
-            var max = db.Admission_Students.OrderByDescending(i => i.Admission_Student_ID).First();
-
-            string id = "";
-            foreach (char a in max.Admission_Student_ID)
-            {
-                int val = (int)Char.GetNumericValue(a);
-                id = (val + 1).ToString();
-            }
-
-            adStd.Admission_Student_ID = id;            
+                      
+            adStd.Admission_Student_ID = getNewAdmissionStudentID();
 
             db.Admission_Students.InsertOnSubmit(adStd);
 
             db.SubmitChanges();
+        }
+
+        public string getNewAdmissionStudentID()
+        {
+            DataClassesLinqDataContext db = new DataClassesLinqDataContext
+                                (DataAccessClassLinq.connectionStringLinq);
+
+            int studentID = -1;
+
+            var tracker = from abc in db.Trackers
+                        where abc.Traking_Name.Equals("Admission_Student_ID")
+                        select abc;
+            
+            foreach (Tracker trackingNumber in tracker)
+                studentID = int.Parse(trackingNumber.Tracking_Number);
+            studentID++;
+                       
+
+            return studentID.ToString();
         }
 
         public Admission_Student getAdmissionStudent(string id)

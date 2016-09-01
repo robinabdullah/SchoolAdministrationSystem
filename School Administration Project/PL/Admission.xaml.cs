@@ -80,5 +80,12 @@ namespace School_Administration_Project.PL
             a.Show();
             this.Close();
         }
+
+        private void Admit_New_Student(object sender, RoutedEventArgs e)
+        {
+            Admit_Student std = new Admit_Student();
+            std.Show();
+            this.Close();
+        }
     }
 }

@@ -17,12 +17,13 @@
                 </TransformGroup>
             </Dialogs:CustomDialog.RenderTransform>
         </Dialogs:CustomDialog>
-        <Button Content="Student Admission" HorizontalAlignment="Left" Margin="79,231,0,0" VerticalAlignment="Top" Width="297" Height="93" FontSize="20" Click="Button_Student_Admission"/>
-        <Button Content="Written Exam Management" HorizontalAlignment="Left" Margin="431,358,0,0" VerticalAlignment="Top" Width="297" Height="93" FontSize="20" Click="Button_Written_Exam_Management"/>
-        <Button Content="Viva Exam Management" HorizontalAlignment="Left" Margin="79,358,0,0" VerticalAlignment="Top" Width="297" Height="93" FontSize="20" Click="Button_Viva_Exam_Management"/>
-        <Button Content="Admission Eligibility" HorizontalAlignment="Left" Margin="431,231,0,0" VerticalAlignment="Top" Width="297" Height="93" FontSize="20" Click="Button_Result_Management"/>
+        <Button Content="Admission Test" HorizontalAlignment="Left" Margin="67,231,0,0" VerticalAlignment="Top" Width="297" Height="93" FontSize="20" Click="Button_Student_Admission"/>
+        <Button Content="Written Exam Management" HorizontalAlignment="Left" Margin="419,358,0,0" VerticalAlignment="Top" Width="336" Height="93" FontSize="20" Click="Button_Written_Exam_Management"/>
+        <Button Content="Viva Exam Management" HorizontalAlignment="Left" Margin="67,358,0,0" VerticalAlignment="Top" Width="297" Height="93" FontSize="20" Click="Button_Viva_Exam_Management"/>
+        <Button Content="Admission Eligibility" HorizontalAlignment="Left" Margin="419,231,0,0" VerticalAlignment="Top" Width="336" Height="93" FontSize="20" Click="Button_Result_Management"/>
         <Button Content="BACK" HorizontalAlignment="Left" Margin="387,543,0,0" VerticalAlignment="Top" Width="391" Height="71" FontSize="26" Click="Button_Back"/>
-        <Button Content="Eligible Student List" HorizontalAlignment="Left" Margin="772,231,0,0" VerticalAlignment="Top" Width="297" Height="93" FontSize="20" Click="Eligible_Student_List"/>
+        <Button Content="ADMISSION STUDENT LIST" HorizontalAlignment="Left" Margin="811,231,0,0" VerticalAlignment="Top" Width="297" Height="93" FontSize="20" Click="Eligible_Student_List"/>
+        <Button Content="New Student" HorizontalAlignment="Left" Margin="811,358,0,0" VerticalAlignment="Top" Width="297" Height="93" FontSize="20" Click="Admit_New_Student"/>
 
     </Grid>
 </Controls:MetroWindow>

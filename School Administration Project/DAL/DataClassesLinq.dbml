@@ -67,16 +67,6 @@
       <Association Name="Admission_Student_Student" Member="Students" ThisKey="Admission_Student_ID" OtherKey="Admissin_Student_ID" Type="Student" />
     </Type>
   </Table>
-  <Table Name="dbo.Student" Member="Students">
-    <Type Name="Student">
-      <Column Name="Student_ID" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Admissin_Student_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Subject_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Result_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="Student_Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Association Name="Admission_Student_Student" Member="Admission_Student" ThisKey="Admissin_Student_ID" OtherKey="Admission_Student_ID" Type="Admission_Student" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.Teacher" Member="Teachers">
     <Type Name="Teacher">
       <Column Name="Teacher_ID" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -115,6 +105,20 @@
       <Column Name="Count" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="Last_Added_Date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="Last_Added_Count" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Tracker" Member="Trackers">
+    <Type Name="Tracker">
+      <Column Name="Traking_Name" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Tracking_Number" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Student" Member="Students">
+    <Type Name="Student">
+      <Column Name="Student_ID" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Admissin_Student_ID" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Student_Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Admission_Student_Student" Member="Admission_Student" ThisKey="Admissin_Student_ID" OtherKey="Admission_Student_ID" Type="Admission_Student" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

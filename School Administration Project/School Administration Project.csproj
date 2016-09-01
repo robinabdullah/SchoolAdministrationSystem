@@ -111,6 +111,9 @@
     <Compile Include="PL\Admission.xaml.cs">
       <DependentUpon>Admission.xaml</DependentUpon>
     </Compile>
+    <Compile Include="PL\Admit Student.xaml.cs">
+      <DependentUpon>Admit Student.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PL\Benefits.xaml.cs">
       <DependentUpon>Benefits.xaml</DependentUpon>
     </Compile>
@@ -169,6 +172,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PL\Admission.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PL\Admit Student.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -12,7 +12,9 @@ namespace School_Administration_Project.DAL
     {
         List<Student> getAllStudents();
         Student getStudent(string id);
-        
+
+        bool addStudent(string id);
+
         void updateStudent(Student student);
         void deleteStudent(Student student);
     }

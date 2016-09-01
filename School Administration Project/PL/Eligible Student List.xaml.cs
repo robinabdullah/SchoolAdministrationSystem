@@ -28,34 +28,54 @@ namespace School_Administration_Project.PL
             DataClassesLinqDataContext db = new DataClassesLinqDataContext(DataAccessClassLinq.connectionStringLinq);
 
             List<EligibleStudentListDG> list = new List<EligibleStudentListDG>();
+            //List<DAL.Admission_Student> list = new List<DAL.Admission_Student>();
 
             var a = from e in db.Admission_Students
                     select e;
+
+
+            EligibleStudentListDG el;
+
             
-
-            EligibleStudentListDG el = new EligibleStudentListDG();
-
-            foreach(DAL.Admission_Student aStd in a)
+            foreach (DAL.Admission_Student aStd in a)
             {
+                el = new EligibleStudentListDG();
                 var b = from e in db.Admission_Exam_Results
                         where e.Admission_Student_ID == aStd.Admission_Student_ID
                         select e;
 
-                foreach
-                el.Id = aStd.Admission_Student_ID;
-                el.Name = aStd.Full_Name;
-                el.Gender = aStd.Gender;
-                el.Group = aStd.Group;
-                el.Mobile = aStd.Mobile;
-                el.Viva = aStd.viva
+                foreach (Admission_Exam_Result aStdRes in b)
+                {
+                    el.Id = aStd.Admission_Student_ID;
+                    el.Name = aStd.Full_Name;
+                    el.Mobile = aStd.Mobile;
+                    el.Grade = aStd.Interested_Grade;
+                    el.Gender = aStd.Gender;
+                    el.Group = aStd.Group;                    
 
-                list.Add(el);
+                    el.Viva = aStdRes.Viva_Exam_Mark;
+                    el.Written = aStdRes.Writtern_Exam_Mark;
+
+                    double total = Double.Parse(aStdRes.Writtern_Exam_Mark) + Double.Parse(aStdRes.Viva_Exam_Mark);
+
+                    el.Total = total.ToString();
+
+                    BusinessRules rule = new BusinessRules();
+                    bool test = rule.checkEligibility(aStdRes.Writtern_Exam_Mark, aStdRes.Viva_Exam_Mark);
+
+                    if (test == true)
+                        el.Eligibility = "Yes";
+                    else
+                        el.Eligibility = "No";
+                }
+
+                list.Add(el); 
             }
+            dataGrid.IsReadOnly = true;
+            dataGrid.DataContext = list;
             
-            dataGrid.ItemsSource = list;
 
-            
-            
+
         }
 
         private void Button_Back(object sender, RoutedEventArgs e)

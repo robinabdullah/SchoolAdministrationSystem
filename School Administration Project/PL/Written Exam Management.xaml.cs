@@ -85,7 +85,10 @@ namespace School_Administration_Project.PL
                 addmissionSession.Text = st.Admission_Session;
                 group.Text = st.Group;
                 Total_mark.Text = "100";
-                mark.Text = stResult.Writtern_Exam_Mark;
+                if (stResult == null)
+                    mark.Text = "";
+                else
+                    mark.Text = stResult.Viva_Exam_Mark;
 
             }
 
