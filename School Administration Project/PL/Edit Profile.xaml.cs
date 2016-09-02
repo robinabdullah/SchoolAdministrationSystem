@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MahApps.Metro.Controls;
 using School_Administration_Project.DAL;
-
+using MahApps.Metro.Controls.Dialogs;
 
 namespace School_Administration_Project.PL
 {
@@ -25,19 +25,73 @@ namespace School_Administration_Project.PL
         public Edit_Profile()
         {
             InitializeComponent();
+
+            First.IsEnabled = false;
+            Last.IsEnabled = false;
+            Father.IsEnabled = false;
+            Mother.IsEnabled = false;
+            Gender.IsEnabled = false;
+            Blood.IsEnabled = false;
+            Status.IsEnabled = false;
+            Marital.IsEnabled = false;
+            Designation.IsEnabled = false;
+            Address.IsEnabled = false;
+            Email.IsEnabled = false;
+            Mobile.IsEnabled = false;
+
         }
 
-        private void Button_DELETE(object sender, RoutedEventArgs e)
+        private async void Button_DELETE(object sender, RoutedEventArgs e)
         {
             DataClassesLinqDataContext db = new DataClassesLinqDataContext(DataAccessClassLinq.connectionStringLinq);
 
-            Teacher deleteTeacher = db.Teachers.FirstOrDefault(ex => ex.Teacher_ID.Equals(ID.Text));
-            db.Teachers.DeleteOnSubmit(deleteTeacher);
-            db.SubmitChanges();
+            Teacher editTeacher = db.Teachers.FirstOrDefault(ex => ex.Teacher_ID.Equals(ID.Text));
+            //db.Teachers.DeleteOnSubmit(deleteTeacher);
+
+            editTeacher.First_Name = First.Text;
+            editTeacher.Last_Name = Last.Text;
+            editTeacher.Fathers_Name = Father.Text;
+            editTeacher.Mothers_Name = Mother.Text;
+            editTeacher.Gender = Gender.Text;
+            editTeacher.Blood_Group = Blood.Text;
+            editTeacher.Status = Status.Text;
+            editTeacher.Marital_Status = Marital.Text;
+            editTeacher.Designation = Designation.Text;
+            editTeacher.Address = Address.Text;
+            editTeacher.Email = Email.Text;
+            editTeacher.Mobile = Mobile.Text;
+
+            try
+            {
+                db.SubmitChanges();
+            }
+            catch
+            {
+                await this.ShowMessageAsync("Error", "Information update failed.");
+            }
+            await this.ShowMessageAsync("Information", "Information update successful.");
+
+            HR hr = new HR();
+            hr.Show();
+            this.Show();
+
         }
 
-        private void Button_DONE(object sender, RoutedEventArgs e)
+        private async void Button_DONE(object sender, RoutedEventArgs e)
         {
+            First.IsEnabled = true;
+            Last.IsEnabled = true;
+            Father.IsEnabled = true;
+            Mother.IsEnabled = true;
+            Gender.IsEnabled = true;
+            Blood.IsEnabled = true;
+            Status.IsEnabled = true;
+            Marital.IsEnabled = true;
+            Designation.IsEnabled = true;
+            Address.IsEnabled = true;
+            Email.IsEnabled = true;
+            Mobile.IsEnabled = true; 
+
             DataClassesLinqDataContext db = new DataClassesLinqDataContext(DataAccessClassLinq.connectionStringLinq);
 
             var s = from a in db.Students
@@ -70,7 +124,7 @@ namespace School_Administration_Project.PL
                     Mother.Text = obj.Mothers_Name;
                     Gender.Text = obj.Gender;
                     Blood.Text = obj.Blood_Group;
-                    DateOfBirth.Text = obj.DOB.ToString();
+                    Status.Text = obj.Status;
                     Marital.Text = obj.Marital_Status;
                     Designation.Text = obj.Designation;
                     Address.Text = obj.Address;
@@ -81,14 +135,14 @@ namespace School_Administration_Project.PL
             }
             if (flag == false)
             {
-                MessageBox.Show("ID not found!");
+                await this.ShowMessageAsync("Error", "Student not found.");
                 First.Text = "";
                 Last.Text = "";
                 Father.Text = "";
                 Mother.Text = "";
                 Gender.Text = "";
                 Blood.Text = "";
-                DateOfBirth.Text = "";
+                Status.Text = "";
                 Marital.Text = "";
                 Designation.Text = "";
                 Address.Text = "";
@@ -96,23 +150,7 @@ namespace School_Administration_Project.PL
                 Mobile.Text = "";
             }
 
-            //if (Married.IsChecked == true)
-            //{
-            //    teach.Marital_Status = "Married";
-            //}
-            //else
-            //{
-            //    teach.Marital_Status = "UnMarried";
-            //}
-
-            //teach.DOB = DateTime.Now;
-            //teach.Joined_Date = DateTime.Now;
-            //teach.Status = "Active";
-
-            //teach.Mobile = Mobile.Text;
-            //teach.Designation = Designation.Text;
-            //teach.Address = Address.Text;
-            //teach.Email = Email.Text;
+            
         }
 
         private void Button_Back(object sender, RoutedEventArgs e)

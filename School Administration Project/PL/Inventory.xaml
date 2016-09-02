@@ -54,7 +54,7 @@
         <TextBox x:Name="Pen" HorizontalAlignment="Left" Height="26" Margin="859,255,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173" IsEnabled="False" />
         <TextBox x:Name="PaperBundle" HorizontalAlignment="Left" Height="26" Margin="859,212,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173" IsEnabled="False" />
         <TextBox x:Name="Soap" HorizontalAlignment="Left" Height="26" Margin="859,166,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="173" IsEnabled="False" />
-        <Button Content="Back" HorizontalAlignment="Left" Margin="159,579,0,0" VerticalAlignment="Top" Width="391" Height="71" FontSize="26" Click="Button_Back"/>
+        <Button Content="Back" HorizontalAlignment="Left" Margin="159,579,0,0" VerticalAlignment="Top" Width="391" Height="71" FontSize="26" Click="Button_Back" IsCancel="True"/>
         <Button x:Name="Edit" Content="EDIT" HorizontalAlignment="Left" Margin="614,579,0,0" VerticalAlignment="Top" Width="391" Height="71" FontSize="26" Click="Button_DONE"/>
 
     </Grid>

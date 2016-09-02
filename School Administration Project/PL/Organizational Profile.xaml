@@ -17,7 +17,7 @@
                 </TransformGroup>
             </Dialogs:CustomDialog.RenderTransform>
         </Dialogs:CustomDialog>
-        <Button Content="Back" Margin="384,555,0,0" VerticalAlignment="Top" Height="71" FontSize="26" Click="Button_Back" HorizontalAlignment="Left" Width="391"/>
+        <Button Content="Back" Margin="384,555,0,0" VerticalAlignment="Top" Height="71" FontSize="26" Click="Button_Back" HorizontalAlignment="Left" Width="391" IsCancel="True"/>
         <Button Content="GO" HorizontalAlignment="Left" Margin="776,179,0,0" VerticalAlignment="Top" Width="67" Height="27" FontSize="12" Click="Button_GO"/>
         <TextBlock HorizontalAlignment="Left" Margin="249,177,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top" FontSize="20"/>
         <TextBlock HorizontalAlignment="Left" Margin="249,222,0,0" TextWrapping="Wrap" Text="NAME" VerticalAlignment="Top" FontSize="20"/>

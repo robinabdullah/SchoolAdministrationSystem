@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using MahApps.Metro.Controls;
 using School_Administration_Project.DAL;
+using MahApps.Metro.Controls.Dialogs;
 
 namespace School_Administration_Project.PL
 {
@@ -34,7 +35,7 @@ namespace School_Administration_Project.PL
             this.Close();
         }
 
-        private void Button_GO(object sender, RoutedEventArgs e)
+        private async void Button_GO(object sender, RoutedEventArgs e)
         {
             DataClassesLinqDataContext db = new DataClassesLinqDataContext(DataAccessClassLinq.connectionStringLinq);
 
@@ -63,11 +64,11 @@ namespace School_Administration_Project.PL
                     Email.Text = obj.Email;
                     Designation.Text = obj.Designation;
                     Status.Text = obj.Status;
-                } 
+                }
             }
             if (flag == false)
             {
-                MessageBox.Show("ID not found!");
+                await this.ShowMessageAsync("Error", "Profile not found.");
                 Name.Text = "";
                 JoinedDate.Text = "";
                 Dept.Text = "";
@@ -78,6 +79,6 @@ namespace School_Administration_Project.PL
             }
         }
 
-        
+
     }
 }

@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using MahApps.Metro.Controls;
 using School_Administration_Project.DAL;
 using School_Administration_Project.BL;
+using MahApps.Metro.Controls.Dialogs;
 
 namespace School_Administration_Project.PL
 {
@@ -64,18 +65,18 @@ namespace School_Administration_Project.PL
             this.Close();
         }
 
-        private void button_Click_2(object sender, RoutedEventArgs e)
+        private async void button_Click_2(object sender, RoutedEventArgs e)
         {
             DataClassesLinqDataContext db = new DataClassesLinqDataContext
                (DataAccessClassLinq.connectionStringLinq);
 
             AdmissionStudentIntImplementation a = new AdmissionStudentIntImplementation();
 
-            DAL.Admission_Student st = a.getAdmissionStudent(id.Text);            
+            DAL.Admission_Student st = a.getAdmissionStudent(id.Text);
 
             if (st == null)
             {
-                MessageBox.Show("Student Not Found");
+                await this.ShowMessageAsync("Error", "Student not found.");
             }
             else
             {
@@ -92,12 +93,12 @@ namespace School_Administration_Project.PL
 
             }
 
-            
+
 
 
         }
 
-        
-        
+
+
     }
 }

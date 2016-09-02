@@ -22,7 +22,7 @@
         <Label x:Name="label1_Copy3" Content="Ad. Session" HorizontalAlignment="Left" Margin="180,265,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial" FontWeight="Bold" Height="35" Width="129"/>
         <TextBox x:Name="gender" HorizontalAlignment="Left" Height="40" Margin="330,320,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="273" Text="&#xA;" FontSize="20" FontStyle="Italic" FontFamily="Arial" BorderThickness="3" IsEnabled="False"/>
         <Label x:Name="label1_Copy4" Content="Gender&#xA;" HorizontalAlignment="Left" Margin="180,320,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial" FontWeight="Bold" Height="58" Width="85"/>
-        <Button x:Name="Back_Button" Content="BACK" HorizontalAlignment="Left" Margin="404,571,0,0" VerticalAlignment="Top" Width="391" Height="68" FontSize="26" Click="Cancel_Button_Click"  />
+        <Button x:Name="Back_Button" Content="BACK" HorizontalAlignment="Left" Margin="404,571,0,0" VerticalAlignment="Top" Width="391" Height="68" FontSize="26" Click="Cancel_Button_Click" IsCancel="True"  />
         <Button x:Name="searchButton" Content="SEARCH" HorizontalAlignment="Left" Margin="516,116,0,0" VerticalAlignment="Top" Width="75" Height="39" FontSize="13.333" IsDefault="True" Click="searchButton_Click" />
         <TextBox x:Name="vivaMark" HorizontalAlignment="Left" Height="40" Margin="787,378,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="273" Text="&#xA;" FontSize="20" FontStyle="Italic" FontFamily="Arial" BorderThickness="3" IsEnabled="False"/>
         <Label x:Name="label1_Copy5" Content="Viva Mark&#xA;" HorizontalAlignment="Left" Margin="636,380,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial" FontWeight="Bold" Height="58" Width="108"/>
@@ -33,7 +33,7 @@
         <TextBox x:Name="written_mark" HorizontalAlignment="Left" Height="40" Margin="787,316,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="273" Text="&#xA;" FontSize="20" FontStyle="Italic" FontFamily="Arial" BorderThickness="3" IsEnabled="False"/>
         <Label x:Name="label1_Copy9" Content="Written Mark" HorizontalAlignment="Left" Margin="636,316,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial" FontWeight="Bold" Height="34" Width="137"/>
         <Label x:Name="eligibleMarks" Content="Written :             Viva:" HorizontalAlignment="Left" Margin="787,261,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial" FontWeight="Bold" Height="34" Width="279"/>
-        <Label x:Name="teacherIDs" Content="Written :             Viva:" HorizontalAlignment="Left" Margin="787,208,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial" FontWeight="Bold" Height="34" Width="273"/>
+        <Label x:Name="teacherIDs" Content="Written :             Viva:" HorizontalAlignment="Left" Margin="787,205,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial" FontWeight="Bold" Height="34" Width="273"/>
         <Label x:Name="label1_Copy10" Content="Eligibility:" HorizontalAlignment="Left" Margin="636,490,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial" FontWeight="Bold" Height="58" Width="108"/>
         <Label x:Name="Eligibility" Content="" HorizontalAlignment="Left" Margin="787,490,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial" FontWeight="Bold" Height="58" Width="108" Background="{x:Null}" Foreground="#FFFF3131"/>
 

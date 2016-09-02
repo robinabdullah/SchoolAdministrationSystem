@@ -11,7 +11,7 @@
     <Grid>
         <Label x:Name="label" Content="Admit Student" HorizontalAlignment="Left" Margin="28,10,0,0" VerticalAlignment="Top" Height="99" Width="677" FontSize="64" FontWeight="Bold"/>
         <Label x:Name="label1" Content="ID :&#xA;" HorizontalAlignment="Left" Margin="96,116,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial" FontWeight="Bold"/>
-        <TextBox x:Name="id" HorizontalAlignment="Left" Height="45" Margin="156,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262" ToolTip="Enter Admission ID of a Student." Controls:ControlsHelper.FocusBorderBrush="#FFE44444" Controls:TextBoxHelper.IsWaitingForData="True" FontSize="20" FontWeight="Bold" />
+        <TextBox x:Name="admission_ID" HorizontalAlignment="Left" Height="45" Margin="156,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="262" ToolTip="Enter Admission ID of a Student." Controls:ControlsHelper.FocusBorderBrush="#FFE44444" Controls:TextBoxHelper.IsWaitingForData="True" FontSize="20" FontWeight="Bold" />
         <Button x:Name="search_button" Content="SEARCH" HorizontalAlignment="Left" Margin="452,114,0,0" VerticalAlignment="Top" Width="75" Height="39" FontSize="13.333" IsDefault="True" Click="search_Button_Click"/>
         <Rectangle Fill="#FFD98EE0" HorizontalAlignment="Left" Height="356" Margin="108,179,0,0" Stroke="Black" VerticalAlignment="Top" Width="931"/>
         <TextBox x:Name="interestedGrade" HorizontalAlignment="Left" Height="40" Margin="278,382,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="273" Text="&#xA;" FontSize="20" FontStyle="Italic" FontFamily="Arial" BorderThickness="3" IsEnabled="False"/>
@@ -24,7 +24,7 @@
         <Label x:Name="label1_Copy3" Content="Ad. Session" HorizontalAlignment="Left" Margin="128,265,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial" FontWeight="Bold" Height="35" Width="129"/>
         <TextBox x:Name="gender" HorizontalAlignment="Left" Height="40" Margin="278,320,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="273" Text="&#xA;" FontSize="20" FontStyle="Italic" FontFamily="Arial" BorderThickness="3" IsEnabled="False"/>
         <Label x:Name="label1_Copy4" Content="Gender&#xA;" HorizontalAlignment="Left" Margin="128,320,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial" FontWeight="Bold" Height="58" Width="85"/>
-        <Button x:Name="Back_Button" Content="BACK" HorizontalAlignment="Left" Margin="368,571,0,0" VerticalAlignment="Top" Width="391" Height="68" FontSize="26" Click="Cancel_Button_Click"  />
+        <Button x:Name="Back_Button" Content="BACK" HorizontalAlignment="Left" Margin="368,571,0,0" VerticalAlignment="Top" Width="391" Height="68" FontSize="26" Click="Cancel_Button_Click" IsCancel="True"  />
         <TextBox x:Name="vivaMark" HorizontalAlignment="Left" Height="40" Margin="735,378,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="273" Text="&#xA;" FontSize="20" FontStyle="Italic" FontFamily="Arial" BorderThickness="3" IsEnabled="False"/>
         <Label x:Name="label1_Copy5" Content="Viva Mark&#xA;" HorizontalAlignment="Left" Margin="584,380,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial" FontWeight="Bold" Height="58" Width="108"/>
         <TextBox x:Name="Total" HorizontalAlignment="Left" Height="40" Margin="735,437,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="273" FontSize="20" FontStyle="Italic" FontFamily="Arial" BorderThickness="3" IsEnabled="False"/>

@@ -23,7 +23,7 @@
         <Button Content="Exam Control" HorizontalAlignment="Left" Margin="461,193,0,0" VerticalAlignment="Top" Width="238" Height="90" FontSize="26" Click="Button_Exam_Control"/>
         <Button Content="HR" HorizontalAlignment="Left" Margin="180,410,0,0" VerticalAlignment="Top" Width="238" Height="89" FontSize="26" Click="Button_HR"/>
         <Button Content="Inventory" HorizontalAlignment="Left" Margin="461,410,0,0" VerticalAlignment="Top" Width="238" Height="89" FontSize="26" Click="Button_Inventory"/>
-        <Button Content="Back" HorizontalAlignment="Left" Margin="387,543,0,0" VerticalAlignment="Top" Width="391" Height="71" FontSize="26" Click="Button_Back"/>
+        <Button Content="Back" HorizontalAlignment="Left" Margin="387,543,0,0" VerticalAlignment="Top" Width="391" Height="71" FontSize="26" Click="Button_Back" IsCancel="True"/>
         <Button Content="Accounts" HorizontalAlignment="Left" Margin="732,194,0,0" VerticalAlignment="Top" Width="238" Height="89" FontSize="26" Click="Button_Inventory"/>
 
     </Grid>

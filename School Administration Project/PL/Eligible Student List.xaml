@@ -14,6 +14,6 @@
             
 
         </DataGrid>
-        <Button Content="Back" HorizontalAlignment="Left" Margin="398,581,0,0" VerticalAlignment="Top" Width="391" Height="71" FontSize="26" Click="Button_Back"/>
+        <Button Content="Back" HorizontalAlignment="Left" Margin="398,581,0,0" VerticalAlignment="Top" Width="391" Height="71" FontSize="26" Click="Button_Back" IsCancel="True"/>
     </Grid>
 </Controls:MetroWindow>
