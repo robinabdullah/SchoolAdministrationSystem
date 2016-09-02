@@ -55,7 +55,7 @@
         <TextBlock HorizontalAlignment="Left" Margin="596,531,0,0" TextWrapping="Wrap" Text="Department" VerticalAlignment="Top" FontSize="20"/>
         <TextBox x:Name="SubjectToTeach" HorizontalAlignment="Left" Height="26" Margin="228,532,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="304"/>
         <TextBox x:Name="Department" HorizontalAlignment="Left" Height="26" Margin="796,532,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="304"/>
-        <Button Content="Back" HorizontalAlignment="Left" Margin="158,581,0,0" VerticalAlignment="Top" Width="391" Height="71" FontSize="26" Click="Button_Back"/>
+        <Button Content="Back" HorizontalAlignment="Left" Margin="158,581,0,0" VerticalAlignment="Top" Width="391" Height="71" FontSize="26" Click="Button_Back" IsCancel="True"/>
 
     </Grid>
 </Controls:MetroWindow>

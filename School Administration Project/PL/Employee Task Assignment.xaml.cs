@@ -110,7 +110,10 @@ namespace School_Administration_Project.PL
 
         private void Button_Back(object sender, RoutedEventArgs e)
         {
+            HR gr = new HR();
 
+            gr.Show();
+            this.Close();
         }
     }
 }
