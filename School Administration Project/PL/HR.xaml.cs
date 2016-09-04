@@ -48,14 +48,14 @@ namespace School_Administration_Project.PL
 
         private void Button_Staff_Recruitment(object sender, RoutedEventArgs e)
         {
-            Edit_Profile edit = new Edit_Profile();
-            edit.Show();
+            Staff_Recruitment staffRecruitment = new Staff_Recruitment();
+            staffRecruitment.Show();
             this.Close();
         }
 
         private void Button_Assign_Courses_To_Teacher(object sender, RoutedEventArgs e)
         {
-            Delete_Profile ep = new Delete_Profile();
+            Edit_Profile ep = new Edit_Profile();
             ep.Show();
             this.Close();
         }
@@ -69,10 +69,7 @@ namespace School_Administration_Project.PL
 
         private void Button_Employees_Task_Assignment(object sender, RoutedEventArgs e)
         {
-            Employee_Task_Assignment ass = new Employee_Task_Assignment();
 
-            ass.Show();
-            this.Close();
         }
     }
 }

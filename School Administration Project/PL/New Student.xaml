@@ -50,7 +50,7 @@
 
         <TextBlock HorizontalAlignment="Left" Margin="587,528,0,0" TextWrapping="Wrap" Text="Country" VerticalAlignment="Top" FontSize="20"/>
 
-        <Button Content="Back" HorizontalAlignment="Left" Margin="158,587,0,0" VerticalAlignment="Top" Width="391" Height="68" FontSize="26" Click="Button_Back" IsCancel="True"/>
+        <Button Content="Back" HorizontalAlignment="Left" Margin="158,587,0,0" VerticalAlignment="Top" Width="391" Height="68" FontSize="26" Click="Button_Back"/>
         <TextBlock HorizontalAlignment="Left" Margin="50,531,0,0" TextWrapping="Wrap" Text="Religion" VerticalAlignment="Top" FontSize="20"/>
         <TextBlock HorizontalAlignment="Left" Margin="586,183,0,0" TextWrapping="Wrap" Text="Group" VerticalAlignment="Top" FontSize="20"/>
 

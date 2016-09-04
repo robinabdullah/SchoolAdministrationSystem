@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using School_Administration_Project.BL;
 using School_Administration_Project.DAL;
-using MahApps.Metro.Controls.Dialogs;
+
 
 namespace School_Administration_Project.PL
 {
@@ -29,7 +29,7 @@ namespace School_Administration_Project.PL
 
 
 
-        private async void searchButton_Click(object sender, RoutedEventArgs e)
+        private void searchButton_Click(object sender, RoutedEventArgs e)
         {
             DataClassesLinqDataContext db = new DataClassesLinqDataContext
                (DataAccessClassLinq.connectionStringLinq);
@@ -54,7 +54,7 @@ namespace School_Administration_Project.PL
                 vivaMark.Clear();
                 Total.Clear();
                 Eligibility.Content = "Unknown";
-                MahApps.Metro.Controls.Dialogs.MessageDialogResult result = await this.ShowMessageAsync("Error!", "Student not found.");
+                MessageBox.Show("Student Not Found");
 
             }
             else
@@ -71,35 +71,27 @@ namespace School_Administration_Project.PL
                 {
                     eligibleMarks.Content = "Written : " + stResult.Writtern_Exam_Mark + "   Viva : " + stResult.Viva_Exam_Mark;
                     teacherIDs.Content = "Written : " + stResult.Written_Examiner_ID + "   Viva : " + stResult.Viva_Examiner_ID;
-
-                    written_mark.Text = stResult.Writtern_Exam_Mark;
-                    vivaMark.Text = stResult.Viva_Exam_Mark;
-
-                    double total = Double.Parse(stResult.Writtern_Exam_Mark) + Double.Parse(stResult.Viva_Exam_Mark);
-
-                    Total.Text = total.ToString();
-
-                    BusinessRules r = new BusinessRules();
-                    bool test = r.checkEligibility(stResult.Writtern_Exam_Mark, stResult.Viva_Exam_Mark);
-
-                    if (test == true)
-                        Eligibility.Content = "Yes";
-                    else
-                        Eligibility.Content = "No";
                 }
                 else
                 {
-                    written_mark.Text = "0";
-                    vivaMark.Text = "0";
                     eligibleMarks.Content = "Written : " + 0 + "   Viva : " + 0;
                     teacherIDs.Content = "Written : " + 0 + "   Viva : " + 0;
-                    Total.Text = "0";
-                    Eligibility.Content = "No";
-
-                    MahApps.Metro.Controls.Dialogs.MessageDialogResult result = await this.ShowMessageAsync("Error!", "Viva and Written marks weren't added yet !!");
                 }
+                
+                written_mark.Text = stResult.Writtern_Exam_Mark;
+                vivaMark.Text = stResult.Viva_Exam_Mark;
 
+                double total = Double.Parse(stResult.Writtern_Exam_Mark) + Double.Parse(stResult.Viva_Exam_Mark);
 
+                Total.Text = total.ToString();
+
+                BusinessRules r = new BusinessRules();
+                bool test = r.checkEligibility(stResult.Writtern_Exam_Mark, stResult.Viva_Exam_Mark);
+
+                if (test == true)
+                    Eligibility.Content = "Yes";
+                else
+                    Eligibility.Content = "No";
             }
         }
 

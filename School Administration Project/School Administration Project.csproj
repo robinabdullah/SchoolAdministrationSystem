@@ -120,14 +120,8 @@
     <Compile Include="PL\Edit Profile.xaml.cs">
       <DependentUpon>Edit Profile.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PL\Delete Profile.xaml.cs">
-      <DependentUpon>Delete Profile.xaml</DependentUpon>
-    </Compile>
     <Compile Include="PL\Eligible Student List.xaml.cs">
       <DependentUpon>Eligible Student List.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="PL\Employee Task Assignment.xaml.cs">
-      <DependentUpon>Employee Task Assignment.xaml</DependentUpon>
     </Compile>
     <Compile Include="PL\Employee_Benefits.xaml.cs">
       <DependentUpon>Employee_Benefits.xaml</DependentUpon>
@@ -190,18 +184,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PL\Edit Profile.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="PL\Delete Profile.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PL\Eligible Student List.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="PL\Employee Task Assignment.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

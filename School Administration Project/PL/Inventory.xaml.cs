@@ -86,6 +86,28 @@ namespace School_Administration_Project.PL
                 Table.IsEnabled = true;
 
 
+
+                /* iv.Printer = Printer.Text;
+                 iv.Computer = Computer.Text;
+                 iv.Mouse = Mouse.Text;
+                 iv.Keyboard = Keyboard.Text;
+                 iv.Projector = Projector.Text;
+                 iv.Camera = Camera.Text;
+                 iv.Whiteboard = WhiteBoard.Text;
+                 iv.Marker = Marker.Text;
+                 iv.Clock = Soap.Text;
+                 iv.Paperbundle = PaperBundle.Text;
+                 iv.Pen = Pen.Text;
+                 iv.Duster = Duster.Text;
+                 iv.Geometrybox = GeometryBox.Text;
+                 iv.Ruler = Ruler.Text;
+                 iv.Chair = Chair.Text;
+                 iv.Bench = Bench.Text;
+                 iv.Table = Table.Text;*/
+
+                // db.Inventories.InsertOnSubmit(iv);
+                //db.SubmitChanges();
+
             }
             else
             {
@@ -110,6 +132,26 @@ namespace School_Administration_Project.PL
                 Table.IsEnabled = false;
 
 
+
+                //Printer.Text = iv.Printer;
+                //Computer.Text = iv.Computer;
+                //Mouse.Text = iv.Mouse;
+                //Keyboard.Text = iv.Keyboard;
+                //Projector.Text = iv.Projector;
+                //Camera.Text = iv.Camera;
+                //WhiteBoard.Text = iv.Whiteboard;
+                //Marker.Text = iv.Marker;
+                //Pencil.Text = iv.Pencil;
+                //Soap.Text = iv.Clock;
+                //PaperBundle.Text = iv.Paperbundle;
+                //Pen.Text = iv.Pen;
+                //Duster.Text = iv.Duster;
+                //GeometryBox.Text = iv.Geometrybox;
+                //Ruler.Text = iv.Ruler;
+                //Chair.Text = iv.Chair;
+                //Bench.Text = iv.Bench;
+                //Table.Text = iv.Table;
+
                 iv.Printer = Printer.Text;
                 iv.Computer = Computer.Text;
                 iv.Mouse = Mouse.Text;
@@ -126,8 +168,9 @@ namespace School_Administration_Project.PL
                 iv.Ruler = Ruler.Text;
                 iv.Chair = Chair.Text;
                 iv.Bench = Bench.Text;
-                iv.Table = Table.Text;
+                iv.Table = Table.Text; 
 
+                //db.Inventories.InsertOnSubmit(iv);
                 db.SubmitChanges();
             }
 

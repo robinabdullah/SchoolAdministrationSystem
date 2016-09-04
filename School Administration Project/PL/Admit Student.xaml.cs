@@ -37,17 +37,14 @@ namespace School_Administration_Project.PL
             AdmissionStudentIntImplementation a = new AdmissionStudentIntImplementation();
             StudentIntImplementation b = new StudentIntImplementation();
 
-            DAL.Admission_Student admissionStudent = a.getAdmissionStudent(admission_ID.Text);
+            DAL.Admission_Student admissionStudent = a.getAdmissionStudent(id.Text);
 
-            DAL.Student student = null;
-            try
-            {
-                student = db.Students.FirstOrDefault(ee => ee.Admissin_Student_ID.Equals(admissionStudent.Admission_Student_ID));
-            }
-            catch
-            {
-                //nothing to do
-            }
+            var checkStudent = from f in db.Students
+                               where f.Admissin_Student_ID.Equals(admissionStudent.Admission_Student_ID)
+                               select f;
+            bool checkStd = false;
+            foreach (DAL.Student std in checkStudent)
+                checkStd = true;
 
 
             if (admissionStudent == null)
@@ -64,10 +61,10 @@ namespace School_Administration_Project.PL
                 vivaMark.Clear();
                 Total.Clear();
                 Eligibility.Content = "Unknown";
-                await this.ShowMessageAsync("Error", "Student not found.");
+                MessageBox.Show("Student Not Found");
 
             }
-            else if (student != null)
+            else if (checkStd.Equals(true))
             {
                 fullName.Clear();
                 addmissionSession.Clear();
@@ -93,48 +90,27 @@ namespace School_Administration_Project.PL
                 interestedGrade.Text = admissionStudent.Interested_Grade;
                 gender.Text = admissionStudent.Gender;
                 group.Text = admissionStudent.Group;
+                eligibleMarks.Content = "Written : " + stResult.Writtern_Exam_Mark + "   Viva : " + stResult.Viva_Exam_Mark;
+                teacherIDs.Content = "Written : " + stResult.Written_Examiner_ID + "   Viva : " + stResult.Viva_Examiner_ID;
 
-                if (stResult != null)
+                written_mark.Text = stResult.Writtern_Exam_Mark;
+                vivaMark.Text = stResult.Viva_Exam_Mark;
+
+                double total = Double.Parse(stResult.Writtern_Exam_Mark) + Double.Parse(stResult.Viva_Exam_Mark);
+
+                Total.Text = total.ToString();
+
+                BusinessRules r = new BusinessRules();
+                bool test = r.checkEligibility(stResult.Writtern_Exam_Mark, stResult.Viva_Exam_Mark);
+
+                if (test == true)
                 {
-                    eligibleMarks.Content = "Written : " + stResult.Writtern_Exam_Mark + "   Viva : " + stResult.Viva_Exam_Mark;
-                    teacherIDs.Content = "Written : " + stResult.Written_Examiner_ID + "   Viva : " + stResult.Viva_Examiner_ID;
-
-                    written_mark.Text = stResult.Writtern_Exam_Mark;
-                    vivaMark.Text = stResult.Viva_Exam_Mark;
-
-                    double total = Double.Parse(stResult.Writtern_Exam_Mark) + Double.Parse(stResult.Viva_Exam_Mark);
-
-                    Total.Text = total.ToString();
-
-                    BusinessRules r = new BusinessRules();
-                    bool test = r.checkEligibility(stResult.Writtern_Exam_Mark, stResult.Viva_Exam_Mark);
-
-                    if (test == true)
-                    {
-                        Eligibility.Content = "Yes";
-                        Add_Student.IsEnabled = true;
-                    }
-
-                    else
-                        Eligibility.Content = "No";
+                    Eligibility.Content = "Yes";
+                    Add_Student.IsEnabled = true;
                 }
+
                 else
-                {
-                    fullName.Clear();
-                    addmissionSession.Clear();
-                    group.Clear();
-                    interestedGrade.Clear();
-                    gender.Clear();
-                    group.Clear();
-                    eligibleMarks.Content = "Written :     Viva : ";
-                    teacherIDs.Content = "Written :    Viva : ";
-                    written_mark.Clear();
-                    vivaMark.Clear();
-                    Total.Clear();
-                    Eligibility.Content = "Unknown";
-                    await this.ShowMessageAsync("Information", "Student's marks weren't added.");
-                }
-
+                    Eligibility.Content = "No";
 
 
             }
@@ -153,7 +129,7 @@ namespace School_Administration_Project.PL
 
             StudentIntImplementation a = new StudentIntImplementation();
 
-            if (a.addStudent(admission_ID.Text).Equals(true))
+            if (a.addStudent(id.Text).Equals(true))
             {
                 await this.ShowMessageAsync("Registration", "Student Added " + result);
             }

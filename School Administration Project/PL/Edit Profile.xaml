@@ -19,7 +19,7 @@
                 </TransformGroup>
             </Dialogs:CustomDialog.RenderTransform>
         </Dialogs:CustomDialog>
-        <Button Content="DONE" HorizontalAlignment="Left" Margin="617,530,0,0" VerticalAlignment="Top" Width="391" Height="71" FontSize="26" Click="Button_DELETE"/>
+        <Button Content="DELETE" HorizontalAlignment="Left" Margin="617,530,0,0" VerticalAlignment="Top" Width="391" Height="71" FontSize="26" Click="Button_DELETE"/>
         <TextBlock HorizontalAlignment="Left" Margin="60,207,0,0" TextWrapping="Wrap" Text="First Name" VerticalAlignment="Top" FontSize="20"/>
         <TextBlock HorizontalAlignment="Left" Margin="60,252,0,0" TextWrapping="Wrap" Text="Last Name" VerticalAlignment="Top" FontSize="20"/>
         <TextBlock HorizontalAlignment="Left" Margin="60,297,0,0" TextWrapping="Wrap" Text="Father's Name" VerticalAlignment="Top" FontSize="20"/>
@@ -27,12 +27,12 @@
         <TextBlock HorizontalAlignment="Left" Margin="60,387,0,0" TextWrapping="Wrap" Text="Gender" VerticalAlignment="Top" FontSize="20"/>
         <TextBlock HorizontalAlignment="Left" Margin="60,432,0,0" TextWrapping="Wrap" Text="Blood Group" VerticalAlignment="Top" FontSize="20"/>
         <TextBlock HorizontalAlignment="Left" Margin="60,477,0,0" TextWrapping="Wrap" Text="Marital Status" VerticalAlignment="Top" FontSize="20"/>
-        <TextBlock HorizontalAlignment="Left" Margin="596,208,0,0" TextWrapping="Wrap" Text="Status" VerticalAlignment="Top" FontSize="20"/>
+        <TextBlock HorizontalAlignment="Left" Margin="596,208,0,0" TextWrapping="Wrap" Text="Date Of Birth" VerticalAlignment="Top" FontSize="20"/>
         <TextBlock HorizontalAlignment="Left" Margin="596,298,0,0" TextWrapping="Wrap" Text="Mobile Number" VerticalAlignment="Top" FontSize="20"/>
         <TextBlock HorizontalAlignment="Left" Margin="596,252,0,0" TextWrapping="Wrap" Text="Designation" VerticalAlignment="Top" FontSize="20"/>
         <TextBlock HorizontalAlignment="Left" Margin="596,342,0,0" TextWrapping="Wrap" Text="Address" VerticalAlignment="Top" FontSize="20"/>
         <TextBlock HorizontalAlignment="Left" Margin="596,432,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" FontSize="20"/>
-        <TextBlock HorizontalAlignment="Left" Margin="63,139,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
+        <TextBlock HorizontalAlignment="Left" Margin="60,142,0,0" TextWrapping="Wrap" Text="ID" VerticalAlignment="Top" FontSize="24" FontWeight="Bold"/>
         <TextBox x:Name="First" HorizontalAlignment="Left" Height="26" Margin="228,208,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="304"/>
         <TextBox x:Name="Last" HorizontalAlignment="Left" Height="26" Margin="228,254,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="304"/>
         <TextBox x:Name="Father" HorizontalAlignment="Left" Height="26" Margin="228,298,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="304"/>
@@ -43,10 +43,10 @@
         <TextBox x:Name="Designation" HorizontalAlignment="Left" Height="26" Margin="796,253,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="304"/>
         <TextBox x:Name="Address" HorizontalAlignment="Left" Height="72" Margin="796,343,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="304"/>
         <TextBox x:Name="Email" HorizontalAlignment="Left" Height="26" Margin="796,433,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="304"/>
-        <TextBox x:Name="ID" HorizontalAlignment="Left" Height="38" Margin="144,136,0,0" TextWrapping="Wrap" Text="Enter ID" VerticalAlignment="Top" Width="304" FontSize="24"/>
-        <Button Content="Back" HorizontalAlignment="Left" Margin="162,530,0,0" VerticalAlignment="Top" Width="391" Height="71" FontSize="26" Click="Button_Back" IsCancel="True"/>
-        <TextBox x:Name="Status" HorizontalAlignment="Left" Height="26" Margin="796,208,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="304"/>
-        <Button Content="Search" HorizontalAlignment="Left" Margin="518,136,0,0" VerticalAlignment="Top" Width="125" Height="38" FontSize="15" Click="Button_DONE" IsDefault="True"/>
+        <TextBox x:Name="ID" HorizontalAlignment="Left" Height="38" Margin="228,142,0,0" TextWrapping="Wrap" Text="Enter ID" VerticalAlignment="Top" Width="304" FontSize="24"/>
+        <Button Content="Back" HorizontalAlignment="Left" Margin="162,530,0,0" VerticalAlignment="Top" Width="391" Height="71" FontSize="26" Click="Button_Back"/>
+        <TextBox x:Name="DateOfBirth" HorizontalAlignment="Left" Height="26" Margin="796,208,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="304"/>
+        <Button Content="GO" HorizontalAlignment="Left" Margin="602,142,0,0" VerticalAlignment="Top" Width="100" Height="38" FontSize="15" Click="Button_DONE" IsDefault="True"/>
         <TextBox x:Name="Marital" HorizontalAlignment="Left" Height="26" Margin="228,478,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="304"/>
 
     </Grid>

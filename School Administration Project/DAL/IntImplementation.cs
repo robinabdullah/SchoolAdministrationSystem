@@ -172,7 +172,8 @@ namespace School_Administration_Project.DAL
 
             db.SubmitChanges();
         }
-        
+
+
         public void addAdmissionStudent(Admission_Student adStd)
         {
             DataClassesLinqDataContext db = new DataClassesLinqDataContext
@@ -232,48 +233,4 @@ namespace School_Administration_Project.DAL
             throw new NotImplementedException();
         }
     }
-
-    public class AdminInterfaceInt : AdminInterface
-    {
-        public bool addAdmin(Admin ad)
-        {
-            DataClassesLinqDataContext db = new DataClassesLinqDataContext
-                (DataAccessClassLinq.connectionStringLinq);
-
-            Admin admin = ad;
-            //Admin admin = new Admin();
-
-           // admin.DOB = ad.DOB;
-            admin.Admin_ID = getNewAdminID();
-
-            try
-            {
-                db.Admins.InsertOnSubmit(admin);
-                db.SubmitChanges();
-            }
-            catch
-            {
-                return false;
-            }
-
-            return true;
-        }
-
-        public string getNewAdminID()
-        {
-            DataClassesLinqDataContext db = new DataClassesLinqDataContext
-                (DataAccessClassLinq.connectionStringLinq);
-
-            Tracker tracker = db.Trackers.FirstOrDefault(e => e.Traking_Name.Equals("Admin_ID"));
-
-            int number = int.Parse(tracker.Tracking_Number);
-            number++;
-
-            tracker.Tracking_Number = number.ToString();
-            db.SubmitChanges();
-
-            return number.ToString();
-        }
-    }
-
 }
