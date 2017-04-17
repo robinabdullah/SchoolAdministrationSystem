@@ -14,7 +14,7 @@
         <Rectangle Fill="#FF86D2F5" HorizontalAlignment="Left" Height="356" Margin="160,179,0,0" Stroke="Black" VerticalAlignment="Top" Width="931"/>
         <TextBox x:Name="interestedGrade" HorizontalAlignment="Left" Height="40" Margin="330,382,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="273" Text="&#xA;" FontSize="20" FontStyle="Italic" FontFamily="Arial" BorderThickness="3" IsEnabled="False"/>
         <Label x:Name="label1_Copy" Content="Grade&#xA;" HorizontalAlignment="Left" Margin="180,384,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial" FontWeight="Bold" Height="58" Width="107"/>
-        <TextBox x:Name="group" HorizontalAlignment="Left" Height="40" Margin="330,441,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="273" FontSize="20" FontStyle="Italic" FontFamily="Arial" BorderThickness="3"/>
+        <TextBox x:Name="group" HorizontalAlignment="Left" Height="40" Margin="330,441,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="273" FontSize="20" FontStyle="Italic" FontFamily="Arial" BorderThickness="3" IsEnabled="False"/>
         <Label x:Name="label1_Copy1" Content="Group&#xA;" HorizontalAlignment="Left" Margin="180,445,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial" FontWeight="Bold" Height="58" Width="136"/>
         <TextBox x:Name="fullName" HorizontalAlignment="Left" Height="40" Margin="330,204,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="273" FontSize="20" FontStyle="Italic" FontFamily="Arial" BorderThickness="3" IsEnabled="False"/>
         <Label x:Name="label1_Copy2" Content="Full Name&#xA;" HorizontalAlignment="Left" Margin="180,208,0,0" VerticalAlignment="Top" FontSize="20" FontFamily="Arial" FontWeight="Bold" Height="57" Width="110"/>

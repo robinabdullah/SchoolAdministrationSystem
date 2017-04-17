@@ -62,7 +62,11 @@ namespace School_Administration_Project.PL
                 admissionSession.Text = st.Admission_Session;
                 group.Text = st.Group;
                 Total_mark.Text = "100";
-                achievedMark.Text = stResult.Viva_Exam_Mark;
+                if(stResult == null)
+                    achievedMark.Text = "";
+                else
+                    achievedMark.Text = stResult.Viva_Exam_Mark;
+
 
             }
         }

@@ -89,6 +89,7 @@
     </ApplicationDefinition>
     <Compile Include="BL\BClasses.cs" />
     <Compile Include="BL\BusinessRules.cs" />
+    <Compile Include="BL\DG.cs" />
     <Compile Include="BL\Login.cs" />
     <Compile Include="DAL\DataAccessClassLinq.cs" />
     <Compile Include="DAL\DataClassesLinq.cs">
@@ -109,6 +110,9 @@
     </Compile>
     <Compile Include="PL\Admission.xaml.cs">
       <DependentUpon>Admission.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="PL\Admit Student.xaml.cs">
+      <DependentUpon>Admit Student.xaml</DependentUpon>
     </Compile>
     <Compile Include="PL\Benefits.xaml.cs">
       <DependentUpon>Benefits.xaml</DependentUpon>
@@ -168,6 +172,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="PL\Admission.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="PL\Admit Student.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
